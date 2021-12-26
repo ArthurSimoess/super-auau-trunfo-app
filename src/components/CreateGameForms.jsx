@@ -29,77 +29,78 @@ function CreateGameForms() {
   }
 
   return(
-    <form onSubmit={ handleSubmit }>
-        <div className="form-container">
-          <CreateGameInputs
+    <form onSubmit={ handleSubmit } className="w-1/2 p-10">
+      <div className="flex flex-col items-center gap-10">
+        <CreateGameInputs
+          type="text"
+          name="name"
+          placeHolder="Digite o nome da carta"
+          label="Nome"
+        />
+        <label htmlFor="description">
+          Descrição
+          <textarea
             type="text"
-            name="name"
-            placeHolder="Digite o nome da carta"
-            label="Nome"
+            placeholder="Digite a descrição"
+            name="description"
+            value={ formsValues.description }
+            onChange={ handleChangeForms }
+            maxLength="100"
+            className="block border rounded w-full py-1 px-2 text-black resize-none"
           />
-          <label htmlFor="description">
-            <span>Description</span>
-            <textarea
-              type="text"
-              placeholder="Digite a descrição"
-              name="description"
-              value={ formsValues.description }
-              onChange={ handleChangeForms }
-              maxLength="100"
-              className="form-control"
-            />
-          </label>
-          <CreateGameInputs
-            type="number"
-            name="firstAttr"
-            label="Ataque"
-            max="99"
-            min="1"
+        </label>
+        <CreateGameInputs
+          type="number"
+          name="firstAttr"
+          label="Ataque"
+          max="99"
+          min="1"
+        />
+        <CreateGameInputs
+          type="number"
+          name="secondAttr"
+          label="Defesa"
+          max="99"
+          min="1"
+        />
+        <CreateGameInputs
+          type="number"
+          name="thirdAttr"
+          label="Velocidade"
+          max="99"
+          min="1"
+        />
+        <CreateGameInputs
+          type="text"
+          name="img"
+          label="Imagem"
+        />
+        <select name="rarity" onChange={ handleChangeForms } className="block border rounded w-1/3 py-1 px-2 text-black">
+          <option value="Normal">Normal</option>
+          <option value="Raro">Raro</option>
+          <option value="Muito Raro">Muito raro</option>
+        </select>
+      { getStorageTrunfo() === 'true' ? 
+        <span>Você já tem um Super Trunfo em seu baralho</span> 
+        : (
+        <label htmlFor="cardTrunfo">
+          Super-Trunfo:
+          <input
+            type="checkbox"
+            name="cardTrunfo"
+            checked={ formsValues.cardTrunfo }
+            onChange={ handleChangeForms }
+            className="block border rounded w-full py-1 px-2 text-black shadow-white"
           />
-          <CreateGameInputs
-            type="number"
-            name="secondAttr"
-            label="Defesa"
-            max="99"
-            min="1"
-          />
-          <CreateGameInputs
-            type="number"
-            name="thirdAttr"
-            label="Velocidade"
-            max="99"
-            min="1"
-          />
-          <CreateGameInputs
-            type="text"
-            name="img"
-            label="Imagem"
-          />
-          <select name="rarity" onChange={ handleChangeForms } >
-            <option value="Normal">Normal</option>
-            <option value="Raro">Raro</option>
-            <option value="Muito Raro">Muito raro</option>
-          </select>
-        { getStorageTrunfo() === 'true' ? 
-          <span>Você já tem um Super Trunfo em seu baralho</span> 
-          : (
-          <label htmlFor="cardTrunfo">
-            <span>Super-Trunfo:</span>
-            <input
-              type="checkbox"
-              name="cardTrunfo"
-              checked={ formsValues.cardTrunfo }
-              onChange={ handleChangeForms }
-            />
-          </label>)
-          }
-          <button 
-            type="submit" 
-            disabled={ disabled } 
-            className="btn btn-primary">
-            Salvar
-          </button>
-        </div>
+        </label>)
+        }
+        <button 
+          type="submit" 
+          disabled={ disabled } 
+          className="bg-indigo-600 px-4 py-2 rounded-lg text-white font-medium w-1/4 disabled:bg-indigo-300">
+          Salvar
+        </button>
+      </div>
     </form>
   )
 }

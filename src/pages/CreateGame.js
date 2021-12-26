@@ -12,9 +12,9 @@ function CreateGame() {
     img, rarity, cardTrunfo } = formsValues;
 
   return(
-    <div className="all-container">
+    <div className="bg-gray-500 h-screen">
       <CreateGameHeader />
-      <div className="create-container">
+      <div className="text-white flex w-screen bg-Card-Dark bg-opacity-70 bg-cover bg-center">
         <CreateGameForms />
         <Card 
           name={ name }

@@ -7,7 +7,7 @@ function CreateGameInputs({ type, name, placeholder, label, maxLength, max, min 
   return(
     <>
         <label htmlFor={name}>
-          <span>{label}</span>
+          {label}
           <input
           type={type}
           value={ formsValues[name] }
@@ -17,7 +17,7 @@ function CreateGameInputs({ type, name, placeholder, label, maxLength, max, min 
           maxLength={ maxLength }
           max={ max }
           min= { min }
-          className="form-control"
+          className="block border rounded w-full py-1 px-2 text-black shadow-sd shadow-white"
           />
         </label>
     </>
