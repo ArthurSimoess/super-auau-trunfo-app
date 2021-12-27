@@ -7,7 +7,7 @@ function Card ({ name, description, firstAttr, secondAttr, thirdAttr,img, rarity
           <p>{ name }</p>
         </div>
           <div className="w-11/12 h-44 ronded-xl">
-            <img src={ img } alt={ name } className="h-44 w-12/12"/>
+            <img src={ img } alt={ name } className="h-44 w-full"/>
           </div>
           <div className="bg-gradient-to-r from-gray-400 to-gray-800 w-11/12 h-28">
             <p className="text-justify p-3">{ description }</p>

@@ -31,7 +31,7 @@ export const deckDog = [
     },
     {
       name: 'Capitão Théo',
-      description: 'Com a sua grava do Capitão América, ele está sempre pronto para salvar o mundo',
+      description: 'Com a sua gravata do Capitão América, ele está sempre pronto para salvar o mundo',
       firstAttr: '40',
       secondAttr: '20',
       thirdAttr: '15',
