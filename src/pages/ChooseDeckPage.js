@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from 'react'
 import { useHistory } from 'react-router-dom';
 import MyContext from '../context/MyContext';
 import { getDeck, getStorageDeckInfos } from '../services/localStorage';
+import pikachico from '../images/pikachico.png'
+import customdeck from '../images/customdeck.png'
 
 function ChooseDeckPage() {
   const history = useHistory();
@@ -35,31 +37,37 @@ function ChooseDeckPage() {
   }
 
   return (
-    <div className=" w-screen h-screen bg-Game-Time bg-cover bg-center flex flex-col items-center gap-5">
-      <div className="flex flex-col items-center">
-        <p>Super-Dog-Trunfo</p>
-        <p>Criador: Arthur Simões</p>
-        <button
-        type="button"
-        name="dogTrunfo"
-        className="px-2 py-2 bg-indigo-600"
-        onClick={ handleClick }
-        >
-        JOGAR
-        </button>
+    <div className=" w-screen p-5 h-screen bg-Game-Time bg-cover bg-center flex flex-col items-center justify-center gap-10 sm:flex-row sm:items-start">
+      <div className="flex flex-col items-center border-solid border-8 border-black rounded-lg">
+        <img src={pikachico} alt="yorkshire vestido de cachorro" className="w-56 h-72"/>
+        <div className="flex flex-col items-center gap-2 bg-gradient-to-r from-blue-100 to-blue-300 w-56 h-28">
+          <p className="font-bold">Super-Dog-Trunfo</p>
+          <p className="font-bold">Criador: Arthur Simões</p>
+          <button
+          type="button"
+          name="dogTrunfo"
+          className="px-2 py-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-purple-400 hover:to-indigo-500 rounded-lg"
+          onClick={ handleClick }
+          >
+          JOGAR
+          </button>
+        </div>
       </div>
       { deck !== '' &&
-      <div>
-        <p>{deckConfig.deckName}</p>
-        <p>{`Criador: ${ deckConfig.creatorName }`}</p>
-        <button
-          type="button"
-          name="customGame"
-          className="px-2 py-2 bg-indigo-600"
-          onClick={ handleClick }
-        >
-          JOGAR
-        </button>
+      <div className="border-solid border-8 border-black rounded-lg">
+        <img src={ customdeck } alt="Cartas" className="w-56 h-72" />
+        <div className="flex flex-col items-center gap-2 bg-gradient-to-r from-blue-100 to-blue-300 w-56 h-28">
+          <p className="font-bold">{deckConfig.deckName}</p>
+          <p className="font-bold">{`Criador: ${ deckConfig.creatorName }`}</p>
+          <button
+            type="button"
+            name="customGame"
+            className="px-2 py-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-purple-400 hover:to-indigo-500 rounded-lg"
+            onClick={ handleClick }
+          >
+            JOGAR
+          </button>
+        </div>
       </div>
         } 
     </div>
