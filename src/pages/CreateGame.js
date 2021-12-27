@@ -14,18 +14,20 @@ function CreateGame() {
   return(
     <div className="bg-gray-500 h-screen">
       <CreateGameHeader />
-      <div className="text-white flex w-screen bg-Card-Dark bg-opacity-70 bg-cover bg-center">
+      <div className="text-white flex flex-col w-screen pb-10 bg-Card-Dark bg-opacity-70 bg-cover bg-center md:flex-row lg:flex-row">
         <CreateGameForms />
-        <Card 
-          name={ name }
-          description={ description }
-          firstAttr={ firstAttr }
-          secondAttr={ secondAttr }
-          thirdAttr={ thirdAttr }
-          img={ img }
-          rarity={ rarity }
-          cardTrunfo={ cardTrunfo }
-        />
+        <div className="w-screen flex items-center justify-center text-white ">
+          <Card
+            name={ name }
+            description={ description }
+            firstAttr={ firstAttr }
+            secondAttr={ secondAttr }
+            thirdAttr={ thirdAttr }
+            img={ img }
+            rarity={ rarity }
+            cardTrunfo={ cardTrunfo }
+          />
+        </div>
       </div>
       <CreateCardsList />
       {

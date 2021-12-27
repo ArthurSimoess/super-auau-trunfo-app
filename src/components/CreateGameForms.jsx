@@ -29,7 +29,7 @@ function CreateGameForms() {
   }
 
   return(
-    <form onSubmit={ handleSubmit } className="w-1/2 p-10">
+    <form onSubmit={ handleSubmit } className="w-screen p-10">
       <div className="flex flex-col items-center gap-10">
         <CreateGameInputs
           type="text"
@@ -75,7 +75,7 @@ function CreateGameForms() {
           name="img"
           label="Imagem"
         />
-        <select name="rarity" onChange={ handleChangeForms } className="block border rounded w-1/3 py-1 px-2 text-black">
+        <select name="rarity" onChange={ handleChangeForms } className="block border rounded w-32 py-1 px-2 text-black">
           <option value="Normal">Normal</option>
           <option value="Raro">Raro</option>
           <option value="Muito Raro">Muito raro</option>
@@ -97,7 +97,7 @@ function CreateGameForms() {
         <button 
           type="submit" 
           disabled={ disabled } 
-          className="bg-indigo-600 px-4 py-2 rounded-lg text-white font-medium w-1/4 disabled:bg-indigo-300">
+          className="bg-indigo-600 px-4 py-2 rounded-lg text-white font-medium w-24 disabled:bg-indigo-300">
           Salvar
         </button>
       </div>

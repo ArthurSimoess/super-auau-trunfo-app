@@ -2,8 +2,7 @@ import React from 'react';
 
 function Card ({ name, description, firstAttr, secondAttr, thirdAttr,img, rarity, cardTrunfo }) {;
   return(
-    <main className="w-8/12 text-white flex items-center justify-center">
-      <section className="flex flex-col items-center h-1/2 w-2/4 border-solid border-8 border-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 shadow-white shadow-md">
+      <section className="flex flex-col items-center h-auto w-72 border-solid border-8 border-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 shadow-white shadow-md sm:w-72 md:w-72 lg:w-72 text-white">
         <div className="bg-gradient-to-r from-gray-400 to-gray-800 w-11/12 h-10 mt-3 rounded-t-xl flex justify-center items-center">
           <p>{ name }</p>
         </div>
@@ -20,7 +19,7 @@ function Card ({ name, description, firstAttr, secondAttr, thirdAttr,img, rarity
           <p>|</p>
           <p>{ `Vel: ${thirdAttr}` }</p>
         </div>
-        <div className="bg-white w-2/4 text-black text-center mt-4 rounded-t-xl p-1">
+        <div className="bg-white w-2/4 text-black text-center mt-5 rounded-t-xl p-1">
           <p>{ rarity }</p>
         </div>
             { cardTrunfo  && 
@@ -31,7 +30,6 @@ function Card ({ name, description, firstAttr, secondAttr, thirdAttr,img, rarity
               </div>
             }
       </section>
-    </main>
   )
 }
 
