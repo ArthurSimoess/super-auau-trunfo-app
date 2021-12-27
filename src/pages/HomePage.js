@@ -83,7 +83,7 @@ function HomePage () {
             </form>
             <hr className="text-black mt-10"/>
             <div className="mt-8 flex flex-col items-center gap-5">
-              <p className="">
+              <p>
                 Ou crie o seu próprio baralho
               </p>
               <button
