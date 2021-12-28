@@ -20,16 +20,26 @@ function RenderGame({ deck }) {
   }, [])
 
   function handleClickAttr({ target: { name } }) {
+    window.scrollTo(0, 0)
     setValueAttr([{value1: data[0][name], name1: name}, {value2: data[1][name], name2: name}])
     setGame(true)
   }
 
   function increasePoints() {
-    if (valueAttr[0].value1 > valueAttr[1].value2 && Number(count) % 2 === 0) {
+    if (Number(valueAttr[0].value1) === Number(valueAttr[1].value2)) {
+      setPlayerPoints({
+        ...playerPoints,
+      })
+    } else if (Number(valueAttr[0].value1) > Number(valueAttr[1].value2) && Number(count) % 2 === 0) {
       setPlayerPoints({
         ...playerPoints,
         jogador1: playerPoints.jogador1 + 1
       })
+    } else if (Number(valueAttr[0].value1) < Number(valueAttr[1].value2) && Number(count) % 2 !== 0) {
+      setPlayerPoints({
+        ...playerPoints,
+        jogador1: playerPoints.jogador1 + 1
+      });
     } else {
       setPlayerPoints({
         ...playerPoints, 
@@ -47,34 +57,43 @@ function RenderGame({ deck }) {
   }
 
   function turnWinner() {
-    if (Number(valueAttr[0].value1) > Number(valueAttr[1].value2) && count % 2 === 0) {
-      return (
-        <DetailsCard 
-          name={ loginName.player1 }
-          attrName={ valueAttr[0].name1 }
-          attrValue={ valueAttr[0].value1 }
-          playerTurn={ playerTurn() }
-        />)
-    } else if (Number(valueAttr[0].value1) < Number(valueAttr[1].value2) && count % 2 !== 0){
-      return (
-        <DetailsCard 
-          name={ loginName.player1 }
-          attrName={ valueAttr[0].name1 }
-          attrValue={ valueAttr[0].value1 }
-          playerTurn={ playerTurn() }
-        />)
-    } else {
+    if (Number(valueAttr[0].value1) === Number(valueAttr[1].value2)) {
       return (
       <DetailsCard 
-        name={ loginName.player2 }
+        name="EMPATE"
         attrName={ valueAttr[0].name1 }
         attrValue={ valueAttr[0].value1 }
         playerTurn={ playerTurn() }
       />)
-    }
+    } else if (Number(valueAttr[0].value1) > Number(valueAttr[1].value2) && count % 2 === 0) {
+        return (
+          <DetailsCard 
+            name={ loginName.player1 }
+            attrName={ valueAttr[0].name1 }
+            attrValue={ valueAttr[0].value1 }
+            playerTurn={ playerTurn() }
+          />)
+      } else if (Number(valueAttr[0].value1) < Number(valueAttr[1].value2) && count % 2 !== 0){
+        return (
+          <DetailsCard 
+            name={ loginName.player1 }
+            attrName={ valueAttr[0].name1 }
+            attrValue={ valueAttr[0].value1 }
+            playerTurn={ playerTurn() }
+          />)
+      } else {
+        return (
+        <DetailsCard 
+          name={ loginName.player2 }
+          attrName={ valueAttr[0].name1 }
+          attrValue={ valueAttr[0].value1 }
+          playerTurn={ playerTurn() }
+        />)
+      }
   }
 
   function handleClickBtn() {
+    window.scrollTo(0, 0)
     increasePoints()
     data.splice(0, 2)
     setCount(count + 1)
@@ -93,7 +112,7 @@ function RenderGame({ deck }) {
                 { 
                   turnWinner()
                 }
-              <div className="flex flex-col items-center justify-center gap-5 pt-10 md:flex-row pb-24">
+              <div className="flex flex-col items-center justify-center gap-5 pt-10 md:flex-row pb-5">
                 <GameCard
                   name={ data[0].name }
                   description={ data[0].description }
@@ -120,7 +139,7 @@ function RenderGame({ deck }) {
                   handleClick={ handleClickAttr }
                 />
               </div>
-              <div className="flex items-center justify-center pt-3 pb-20">
+              <div className="flex items-center justify-center pt-3 pb-40">
                 <button
                   type="button"
                   onClick={ handleClickBtn }
@@ -151,9 +170,9 @@ function RenderGame({ deck }) {
                       handleClick={ handleClickAttr }
                     />
                 </div>
-                <div className="flex flex-col items-center gap-5 border-black border-4 p-3 rounded-md bg-gradient-to-r from-gray-50 to-gray-500 font-bold text-sm sm:text-lg">
+                <div className="flex flex-col items-center gap-3 border-black border-4 p-3 rounded-md bg-gradient-to-r from-gray-50 to-gray-500 font-bold w-60 text-lg sm:w-auto">
                   <p>Como jogar:</p>
-                  <p className="text-center text-gray-900">Escolha um atributo(Ataque,Defesa ou Velocidade) e clique nele</p>
+                  <p className="text-justify text-gray-900">Escolha um atributo(Ataque,Defesa ou Velocidade) e clique nele</p>
                 </div>
                 <div className="pb-56"></div>
               </div>
