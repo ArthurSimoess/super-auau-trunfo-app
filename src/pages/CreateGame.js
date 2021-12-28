@@ -8,7 +8,7 @@ import BtnFinishDeck from "../components/BtnFinishDeck";
 
 function CreateGame() {
   const { providerValues: { formsValues } }= useContext(MyContext);
-  const { name, description, firstAttr, secondAttr, thirdAttr,
+  const { name, description, attack, defense, velocity,
     img, rarity, cardTrunfo } = formsValues;
 
   return(
@@ -20,9 +20,9 @@ function CreateGame() {
           <Card
             name={ name }
             description={ description }
-            firstAttr={ firstAttr }
-            secondAttr={ secondAttr }
-            thirdAttr={ thirdAttr }
+            firstAttr={ attack }
+            secondAttr={ defense }
+            thirdAttr={ velocity }
             img={ img }
             rarity={ rarity }
             cardTrunfo={ cardTrunfo }

@@ -30,6 +30,10 @@ function InstructionsPage() {
      history.push('/createGame')
   }
 
+  function backHomePage() {
+    history.push('/')
+  }
+
 
   return (
     <div className="bg-gradient-to-r from-gray-500 to-gray-300 h-screen pt-40">
@@ -55,6 +59,7 @@ function InstructionsPage() {
               className="block border rounded w-full py-1 px-2 text-neutral-900"
               value={ deckConfig.deckName }
               onChange={ handleChange }
+              autocomplete="off"
             />
         </label>
             </div>
@@ -67,6 +72,7 @@ function InstructionsPage() {
               className="block border rounded w-full py-1 px-2 text-neutral-900"
               value={ deckConfig.creatorName }
               onChange={ handleChange }
+              autocomplete="off"
             />
         </label>
             </div>
@@ -76,7 +82,14 @@ function InstructionsPage() {
               disabled={ disabled }
               onClick={ handleClick }
             >
-        Criar baralho
+               Criar baralho
+            </button>
+            <button
+              type="button"
+              className="bg-indigo-500 px-4 py-2 rounded-lg text-white font-medium w-28 disabled:bg-indigo-300"
+              onClick={ backHomePage }
+            >
+               Voltar
             </button>
       </div>
 

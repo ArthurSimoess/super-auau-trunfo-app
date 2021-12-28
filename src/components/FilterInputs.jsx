@@ -14,6 +14,7 @@ function FilterInputs({ name, type, onChange, value, checked, disabled, classNam
           value={ value }
           checked={ checked }
           disabled={ disabled }
+          autocomplete="off"
         />
       </label>
     </div>

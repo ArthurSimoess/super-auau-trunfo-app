@@ -11,9 +11,9 @@ function MyContextProvider({ children }) {
   const [formsValues, setFormsValue] = useState({
     name: '',
     description: '',
-    firstAttr: '',
-    secondAttr: '',
-    thirdAttr: '',
+    attack: '',
+    defense: '',
+    velocity: '',
     img: '',
     rarity: 'Normal',
     cardTrunfo: false,
@@ -42,8 +42,8 @@ function MyContextProvider({ children }) {
   })
 
   function checkInputs() {
-    const { name, description, firstAttr, secondAttr, thirdAttr, img } = formsValues;
-    const array = [ name, description, firstAttr, secondAttr, thirdAttr, img ]
+    const { name, description, attack, defense, velocity, img } = formsValues;
+    const array = [ name, description, attack, defense, velocity, img ]
     const arrayCheck = array.every((element) => element.length > 0)
     setDisabled(!arrayCheck)
   }
