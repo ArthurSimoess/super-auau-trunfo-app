@@ -49,11 +49,11 @@ function RenderGame({ deck }) {
   }
 
   return (
-      <div className="">
+      <div className="bg-Dice bg-cover bg-center sm:h-screen">
         {
           game ? (
             <section className="pt-10">
-              <div className="flex justify-center mx-auto pt-10 bg-gray-400 p-10 w-96 rounded-xl">
+              <div className="flex justify-center mx-auto bg-gradient-to-r from-gray-50 to-gray-500 p-4 w-40 rounded-xl font-bold">
                 { 
                   turnWinner()
                 }
@@ -87,7 +87,7 @@ function RenderGame({ deck }) {
                 <button
                   type="button"
                   onClick={ handleClickBtn }
-                  className="p-5 bg-gray-400 rounded-xl"
+                  className="p-3 bg-gradient-to-r from-gray-50 to-gray-500 hover:p-4 border-4 border-black rounded-xl font-bold"
                 >
                   Nova Rodada
                 </button>
@@ -95,16 +95,16 @@ function RenderGame({ deck }) {
             </section>)
             : (
               <div className="flex flex-col items-center justify-center pt-20">
-                <div className="flex flex-col items-center justify-center gap-5 bg-gray-400 p-5 rounded-xl w-96">
+                <div className="flex flex-col items-center justify-center gap-5 bg-gradient-to-r from-gray-50 to-gray-500 p-5 w-64 rounded-xl font-bold">
                   {
                     count % 2 === 0 ? (
-                    <p>Jogador da rodada: { loginName.player1 }</p>
+                    <p>Jogador da rodada:  { loginName.player1 }</p>
                     ) : (
-                    <p>Jogador da rodada: { loginName.player2 }</p>)
+                    <p>Jogador da rodada:  { loginName.player2 }</p>)
                   }
                   <p>Escolha um atributo e clique nele</p>
                 </div>
-                <div>
+                <div className="pt-10 pb-56">
                     <GameCard
                       name={ data[0].name }
                       description={ data[0].description }

@@ -8,17 +8,17 @@ function GameCard({ name, img, description, firstAttr, secondAttr,
   return (
     <>
       <main>
-        <section className="flex flex-col items-center h-auto w-72 border-solid border-8 border-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 shadow-white shadow-md sm:w-72 md:w-72 lg:w-72 text-white">
-          <div className="bg-gradient-to-r from-gray-400 to-gray-800 w-11/12 h-10 mt-3 rounded-t-xl flex justify-center items-center">
+        <section className="flex flex-col items-center h-auto w-72 border-solid border-8 border-black bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 shadow-xl sm:w-72 md:w-72 lg:w-72 text-white">
+          <div className="bg-gradient-to-r from-gray-500 to-gray-900 w-11/12 h-10 mt-3 rounded-t-xl flex justify-center items-center">
             <p>{ name }</p>
           </div>
           <div className="w-11/12 h-44 ronded-xl">
             <img src={ img } alt={ name } className="h-44 w-full" />
           </div>
-          <div className="bg-gradient-to-r from-gray-400 to-gray-800 w-11/12 h-28">
-            <p>{ description }</p>
+          <div className="p-2 bg-gradient-to-r from-gray-500 to-gray-900 w-11/12 h-28">
+            <p className="text-justify">{ description }</p>
           </div>
-          <div className="bg-gradient-to-r from-gray-400 to-gray-800 w-11/12 h-16 rounded-b-xl flex justify-around items-center font-bold shadow-lg border-t-4">
+          <div className="bg-gradient-to-r from-gray-500 to-gray-900 w-11/12 h-16 rounded-b-xl flex justify-around items-center font-bold shadow-lg border-t-4">
             <label htmlFor="first">
               <input
                 type="button"
@@ -47,7 +47,7 @@ function GameCard({ name, img, description, firstAttr, secondAttr,
               />
             </label>
           </div>
-          <div className="bg-white w-2/4 text-black text-center mt-5 rounded-t-xl p-1">
+          <div className="bg-black w-2/4 text-white text-center mt-5 rounded-t-xl p-1">
             <p>{ rarity }</p>
           </div>
             { cardTrunfo  && 

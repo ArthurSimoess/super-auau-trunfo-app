@@ -46,6 +46,7 @@ function CreateGameForms() {
             value={ formsValues.description }
             onChange={ handleChangeForms }
             maxLength="100"
+            autocomplete="off"
             className="block border rounded w-full py-1 px-2 text-black resize-none"
           />
         </label>
