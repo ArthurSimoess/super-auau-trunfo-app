@@ -172,7 +172,7 @@ function RenderGame({ deck }) {
                 </div>
                 <div className="flex flex-col items-center gap-3 border-black border-4 p-3 rounded-md bg-gradient-to-r from-gray-50 to-gray-500 font-bold w-60 text-lg sm:w-auto">
                   <p>Como jogar:</p>
-                  <p className="text-justify text-gray-900">Escolha um atributo(Ataque,Defesa ou Velocidade) e clique nele</p>
+                  <p className="text-center text-gray-900 sm:text-justify">Escolha um atributo(Ataque,Defesa ou Velocidade) e clique nele</p>
                 </div>
                 <div className="pb-56"></div>
               </div>

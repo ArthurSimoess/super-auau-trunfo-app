@@ -32,6 +32,7 @@ function InstructionsPage() {
 
   function backHomePage() {
     history.push('/')
+    window.location.reload();
   }
 
 
@@ -41,7 +42,7 @@ function InstructionsPage() {
         <h1 className="text-indigo-500 font-bold">Instruções para montagem do baralho</h1>
         <ul className="list-disc">
           <li className="mb-3 text-justify">
-            O numero de cartas do baralho precisa ser necessariamente um número par, caso contrário o botão para salvar o baralho não aparecerá na tela.
+            O número de cartas do baralho precisa ser necessariamente par, caso contrário o botão para salvar o baralho não será habilitado na tela.
           </li>
           <li className="mb-3 text-justify">
             A imagem da carta deverá ser necessariamente o link url de alguma imagem que esteja disponível na internet.

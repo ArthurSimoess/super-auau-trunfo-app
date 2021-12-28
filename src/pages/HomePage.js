@@ -36,65 +36,67 @@ function HomePage () {
   }
 
   return(
-      <div className="bg-gradient-to-r from-gray-500 to-indigo-200 h-screen pb-10">
-        <img src={ cardImg } alt="cards" className="w-52 mx-auto pt-10 mb-5"/>
-        <h1 className="text-center text-2xl font-bold mb-5">Super-Tryunfo</h1>
-        <div className="bg-white w-80 h-96 rounded-lg mx-auto p-8 shadow-xl">
-            <form>
-                <div className="mb-3">
+      <div className="bg-gradient-to-r from-gray-500 to-indigo-200 sm:h-screen pb-44">
+        <div>
+          <img src={ cardImg } alt="cards" className="w-52 mx-auto pt-10 mb-5"/>
+          <h1 className="text-center text-2xl font-bold mb-5">Super-Tryunfo</h1>
+          <div className="bg-white w-80 h-96 rounded-lg mx-auto p-8 shadow-xl">
+              <form>
+                  <div className="mb-3">
+                    <label htmlFor="name" className="text-base text-gray-800">
+                    <i class="fas fa-user"></i> Primeiro jogador:
+                      <input
+                        name="player1"
+                        id="name1"
+                        value={ loginName.player1 }
+                        onChange={ handleChange }
+                        className="block border rounded w-full py-1 px-2"
+                        type="text"
+                        placeholder="Nome do primeiro jogador"
+                        autoComplete="off"
+                      />
+                    </label>
+                  </div>
+                  <div className="mb-6">
                   <label htmlFor="name" className="text-base text-gray-800">
-                  <i class="fas fa-user"></i> Primeiro jogador:
+                  <i class="fas fa-user"></i> Segundo jogador:
                     <input
-                      name="player1"
-                      id="name1"
-                      value={ loginName.player1 }
+                      name="player2"
+                      id="name"
+                      value={ loginName.player2 }
                       onChange={ handleChange }
                       className="block border rounded w-full py-1 px-2"
                       type="text"
-                      placeholder="Nome do primeiro jogador"
+                      placeholder="Nome do segundo jogador"
                       autoComplete="off"
                     />
                   </label>
-                </div>
-                <div className="mb-6">
-                <label htmlFor="name" className="text-base text-gray-800">
-                <i class="fas fa-user"></i> Segundo jogador:
-                  <input
-                    name="player2"
-                    id="name"
-                    value={ loginName.player2 }
-                    onChange={ handleChange }
-                    className="block border rounded w-full py-1 px-2"
-                    type="text"
-                    placeholder="Nome do segundo jogador"
-                    autoComplete="off"
-                  />
-                </label>
-                </div>
+                  </div>
+                  <button
+                    type="button"
+                    className="bg-indigo-600 px-4 py-2 rounded-lg text-white font-medium w-full disabled:bg-indigo-300"
+                    name="game"
+                    onClick={ handleClick }
+                    disabled={ disabledBtn }
+                  >
+                   Jogar
+                  </button>
+              </form>
+              <hr className="text-black mt-10"/>
+              <div className="mt-5 flex flex-col items-center gap-5">
+                <p>
+                  Ou crie o seu próprio baralho
+                </p>
                 <button
                   type="button"
-                  className="bg-indigo-600 px-4 py-2 rounded-lg text-white font-medium w-full disabled:bg-indigo-300"
-                  name="game"
+                  className="bg-indigo-600  px-4 py-2 rounded-lg text-white"
+                  name="instructions"
                   onClick={ handleClick }
-                  disabled={ disabledBtn }
                 >
-                 Jogar
+                  Criar
                 </button>
-            </form>
-            <hr className="text-black mt-10"/>
-            <div className="mt-5 flex flex-col items-center gap-5">
-              <p>
-                Ou crie o seu próprio baralho
-              </p>
-              <button
-                type="button"
-                className="bg-indigo-600  px-4 py-2 rounded-lg text-white"
-                name="instructions"
-                onClick={ handleClick }
-              >
-                Criar
-              </button>
-            </div>
+              </div>
+          </div>
         </div>
       </div>
   )
