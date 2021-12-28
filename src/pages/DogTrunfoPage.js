@@ -5,7 +5,7 @@ import { deckDog } from '../data/DogTrunfo'
 function DogTrunfoPage() {
   const deckDogTrunfo = deckDog.sort(() => Math.random() - 0.5 )
   return(
-    <div>
+    <div className="bg-Dice bg-cover bg-center">
       <RenderGame
         deck={ deckDogTrunfo }
       />

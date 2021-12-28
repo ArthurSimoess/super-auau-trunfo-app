@@ -2,7 +2,7 @@ import React from 'react'
 
 
 function GameCard({ name, img, description, firstAttr, secondAttr, 
-    thirdAttr, rarity, cardTrunfo, handleClick }) {
+    thirdAttr, rarity, cardTrunfo, handleClick, disabled }) {
 
 
   return (
@@ -22,28 +22,31 @@ function GameCard({ name, img, description, firstAttr, secondAttr,
             <label htmlFor="first">
               <input
                 type="button"
-                name="firstAttr"
+                name="attack"
                 value={ `Atk: ${firstAttr}`}
-                className="p-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 focus:ring-4 ring-white rounded-xl cursor-pointer"
+                className="p-2 bg-gradient-to-r from-green-300 to-blue-400 hover:from-pink-500 hover:to-yellow-500 focus:ring-4 ring-white disabled:opacity-40 disabled:cursor-not-allowed rounded-xl cursor-pointer text-black font-bold"
                 onClick={ handleClick }
+                disabled={disabled}
               />
             </label>
             <label htmlFor="second">
               <input
                 type="button"
-                name="secondAttr"
+                name="defense"
                 value={ `Def: ${secondAttr}` }
-                className="p-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 focus:ring-4 ring-white rounded-xl cursor-pointer"
+                className="p-2 bg-gradient-to-r from-green-300 to-blue-400 hover:from-pink-500 hover:to-yellow-500 focus:ring-4 ring-white disabled:opacity-40 disabled:cursor-not-allowed rounded-xl cursor-pointer text-black font-bold"
                 onClick={ handleClick }
+                disabled={disabled}
               />
             </label>
             <label htmlFor="third">
               <input
                 type="button"
-                name="thirdAttr"
-                className="p-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 focus:ring-4 ring-white rounded-xl cursor-pointer"
+                name="velocity"
+                className="p-2 bg-gradient-to-r from-green-300 to-blue-400 hover:from-pink-500 hover:to-yellow-500 focus:ring-4 ring-white disabled:opacity-40 disabled:cursor-not-allowed rounded-xl cursor-pointer text-black font-bold"
                 value={ `Vel: ${thirdAttr}` }
                 onClick={ handleClick }
+                disabled={disabled}
               />
             </label>
           </div>

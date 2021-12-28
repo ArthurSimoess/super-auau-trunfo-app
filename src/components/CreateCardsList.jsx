@@ -92,9 +92,9 @@ function CreateCardsList() {
                     <Card
                       name={ card.name }
                       description={ card.description }
-                      firstAttr={ card.firstAttr }
-                      secondAttr={ card.secondAttr }
-                      thirdAttr={ card.thirdAttr }
+                      firstAttr={ card.attack }
+                      secondAttr={ card.defense }
+                      thirdAttr={ card.velocity }
                       img={ card.img }
                       rarity={ card.rarity }
                       cardTrunfo={ card.cardTrunfo }

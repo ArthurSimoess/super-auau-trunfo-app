@@ -18,9 +18,9 @@ function CreateGameForms() {
     checkSuperTrunfo()
     setFormsValue({name: '',
     description: '',
-    firstAttr: '',
-    secondAttr: '',
-    thirdAttr: '',
+    attack: '',
+    defense: '',
+    velocity: '',
     img: '',
     rarity: 'Normal',
     cardTrunfo: false,
@@ -52,21 +52,21 @@ function CreateGameForms() {
         </label>
         <CreateGameInputs
           type="number"
-          name="firstAttr"
+          name="attack"
           label="Ataque"
           max="99"
           min="1"
         />
         <CreateGameInputs
           type="number"
-          name="secondAttr"
+          name="defense"
           label="Defesa"
           max="99"
           min="1"
         />
         <CreateGameInputs
           type="number"
-          name="thirdAttr"
+          name="velocity"
           label="Velocidade"
           max="99"
           min="1"

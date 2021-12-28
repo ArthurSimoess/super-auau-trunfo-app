@@ -1,23 +1,31 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import MyContext from '../context/MyContext';
+import { getStorageName } from '../services/localStorage';
+import DetailsCard from './DetailsCard';
 import GameCard from './GameCard';
+import PlayerTurnCard from './PlayerTurnCard';
 
 function RenderGame({ deck }) {
   const { providerValues: { game, setGame, valueAttr, setValueAttr, 
-    count, setCount, loginName, playerPoints, setPlayerPoints } } = useContext(MyContext);
+    count, setCount, loginName, playerPoints, setPlayerPoints, setName } } = useContext(MyContext);
   const history = useHistory();
   
   const data = deck;
-  console.log(data)
+  
+  useEffect(() => {
+    if (loginName.player1 === '' &&  getStorageName() !== null) {
+      setName(getStorageName())
+    }
+  }, [])
 
   function handleClickAttr({ target: { name } }) {
-    setValueAttr([data[0][name], data[1][name]])
+    setValueAttr([{value1: data[0][name], name1: name}, {value2: data[1][name], name2: name}])
     setGame(true)
   }
 
   function increasePoints() {
-    if (valueAttr[0] > valueAttr[1] && Number(count) % 2 === 0) {
+    if (valueAttr[0].value1 > valueAttr[1].value2 && Number(count) % 2 === 0) {
       setPlayerPoints({
         ...playerPoints,
         jogador1: playerPoints.jogador1 + 1
@@ -30,11 +38,39 @@ function RenderGame({ deck }) {
     }
   }
 
-  function turnWinner() {
-    if (valueAttr[0] > valueAttr[1] && count % 2 === 0) {
-      return <p className="text-xl">Vencedor da rodada: { loginName.player1 }</p>
+  function playerTurn() {
+    if(count % 2 === 0) {
+      return loginName.player1
     } else {
-      return <p className="text-xl">Vencedor da rodada: { loginName.player2 }</p>
+      return loginName.player2
+    }
+  }
+
+  function turnWinner() {
+    if (Number(valueAttr[0].value1) > Number(valueAttr[1].value2) && count % 2 === 0) {
+      return (
+        <DetailsCard 
+          name={ loginName.player1 }
+          attrName={ valueAttr[0].name1 }
+          attrValue={ valueAttr[0].value1 }
+          playerTurn={ playerTurn() }
+        />)
+    } else if (Number(valueAttr[0].value1) < Number(valueAttr[1].value2) && count % 2 !== 0){
+      return (
+        <DetailsCard 
+          name={ loginName.player1 }
+          attrName={ valueAttr[0].name1 }
+          attrValue={ valueAttr[0].value1 }
+          playerTurn={ playerTurn() }
+        />)
+    } else {
+      return (
+      <DetailsCard 
+        name={ loginName.player2 }
+        attrName={ valueAttr[0].name1 }
+        attrValue={ valueAttr[0].value1 }
+        playerTurn={ playerTurn() }
+      />)
     }
   }
 
@@ -47,25 +83,25 @@ function RenderGame({ deck }) {
     }
     setGame(false)
   }
+  console.log(count)
 
   return (
-      <div className="bg-Dice bg-cover bg-center sm:h-screen">
+      <div>
         {
           game ? (
             <section className="pt-10">
-              <div className="flex justify-center mx-auto bg-gradient-to-r from-gray-50 to-gray-500 p-4 w-40 rounded-xl font-bold">
                 { 
                   turnWinner()
                 }
-              </div>
-              <div className="flex flex-col items-center justify-center gap-5 pt-10 md:flex-row">
+              <div className="flex flex-col items-center justify-center gap-5 pt-10 md:flex-row pb-24">
                 <GameCard
                   name={ data[0].name }
                   description={ data[0].description }
-                  firstAttr={ data[0].firstAttr }
-                  secondAttr={ data[0].secondAttr }
-                  thirdAttr={ data[0].thirdAttr }
+                  firstAttr={ data[0].attack }
+                  secondAttr={ data[0].defense }
+                  thirdAttr={ data[0].velocity }
                   img={ data[0].img }
+                  disabled={ true }
                   rarity={ data[0].rarity }
                   cardTrunfo={ data[0].cardTrunfo }
                   handleClick={ handleClickAttr }
@@ -74,16 +110,17 @@ function RenderGame({ deck }) {
                 <GameCard
                   name={ data[1].name }
                   description={ data[1].description }
-                  firstAttr={ data[1].firstAttr }
-                  secondAttr={ data[1].secondAttr }
-                  thirdAttr={ data[1].thirdAttr }
+                  firstAttr={ data[1].attack }
+                  secondAttr={ data[1].defense }
+                  thirdAttr={ data[1].velocity }
                   img={ data[1].img }
+                  disabled={ true }
                   rarity={ data[1].rarity }
                   cardTrunfo={ data[1].cardTrunfo }
                   handleClick={ handleClickAttr }
                 />
               </div>
-              <div className="flex items-center justify-center pt-10">
+              <div className="flex items-center justify-center pt-3 pb-20">
                 <button
                   type="button"
                   onClick={ handleClickBtn }
@@ -95,28 +132,30 @@ function RenderGame({ deck }) {
             </section>)
             : (
               <div className="flex flex-col items-center justify-center pt-20">
-                <div className="flex flex-col items-center justify-center gap-5 bg-gradient-to-r from-gray-50 to-gray-500 p-5 w-64 rounded-xl font-bold">
                   {
                     count % 2 === 0 ? (
-                    <p>Jogador da rodada:  { loginName.player1 }</p>
+                    <PlayerTurnCard playerName={ loginName.player1 }/>
                     ) : (
-                    <p>Jogador da rodada:  { loginName.player2 }</p>)
+                    <PlayerTurnCard playerName={ loginName.player2 }/>)
                   }
-                  <p>Escolha um atributo e clique nele</p>
-                </div>
-                <div className="pt-10 pb-56">
+                <div className="pt-10 pb-10">
                     <GameCard
                       name={ data[0].name }
                       description={ data[0].description }
-                      firstAttr={ data[0].firstAttr }
-                      secondAttr={ data[0].secondAttr }
-                      thirdAttr={ data[0].thirdAttr }
+                      firstAttr={ data[0].attack }
+                      secondAttr={ data[0].defense }
+                      thirdAttr={ data[0].velocity }
                       img={ data[0].img }
                       rarity={ data[0].rarity }
                       cardTrunfo={ data[0].cardTrunfo }
                       handleClick={ handleClickAttr }
                     />
                 </div>
+                <div className="flex flex-col items-center gap-5 border-black border-4 p-3 rounded-md bg-gradient-to-r from-gray-50 to-gray-500 font-bold text-sm sm:text-lg">
+                  <p>Como jogar:</p>
+                  <p className="text-center text-gray-900">Escolha um atributo(Ataque,Defesa ou Velocidade) e clique nele</p>
+                </div>
+                <div className="pb-56"></div>
               </div>
             )     
             }
