@@ -36,14 +36,14 @@ function HomePage () {
   }
 
   return(
-      <div className="bg-gradient-to-r from-gray-500 to-indigo-200 h-screen">
-        <img src={ cardImg } alt="cards" className="w-52 mx-auto pt-16 mb-5"/>
+      <div className="bg-gradient-to-r from-gray-500 to-indigo-200 h-screen pb-10">
+        <img src={ cardImg } alt="cards" className="w-52 mx-auto pt-10 mb-5"/>
         <h1 className="text-center text-2xl font-bold mb-5">Super-Tryunfo</h1>
-        <div className="bg-white max-w-md rounded-lg mx-auto p-10 shadow-xl">
+        <div className="bg-white w-80 h-96 rounded-lg mx-auto p-8 shadow-xl">
             <form>
                 <div className="mb-3">
                   <label htmlFor="name" className="text-base text-gray-800">
-                    Primeiro jogador:
+                  <i class="fas fa-user"></i> Primeiro jogador:
                     <input
                       name="player1"
                       id="name1"
@@ -58,7 +58,7 @@ function HomePage () {
                 </div>
                 <div className="mb-6">
                 <label htmlFor="name" className="text-base text-gray-800">
-                  Segundo jogador:
+                <i class="fas fa-user"></i> Segundo jogador:
                   <input
                     name="player2"
                     id="name"
@@ -82,7 +82,7 @@ function HomePage () {
                 </button>
             </form>
             <hr className="text-black mt-10"/>
-            <div className="mt-8 flex flex-col items-center gap-5">
+            <div className="mt-5 flex flex-col items-center gap-5">
               <p>
                 Ou crie o seu próprio baralho
               </p>

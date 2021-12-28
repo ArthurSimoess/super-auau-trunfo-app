@@ -36,8 +36,8 @@ function InstructionsPage() {
 
 
   return (
-    <div className="bg-gradient-to-r from-gray-500 to-gray-300 h-screen pt-40">
-      <div className="bg-white shadow-2xl max-w-md m-auto flex flex-col items-center rounded-xl p-10 gap-6">
+    <div className="bg-gradient-to-r from-gray-500 to-gray-300 h-screen pt-5 pb-24">
+      <div className="bg-white shadow-2xl max-w-md m-auto flex flex-col items-center rounded-xl p-10 gap-6 pb-2">
         <h1 className="text-indigo-500 font-bold">Instruções para montagem do baralho</h1>
         <ul className="list-disc">
           <li className="mb-3 text-justify">

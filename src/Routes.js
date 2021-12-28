@@ -6,6 +6,7 @@ import CustomTrunfoPage from "./pages/CustomTrunfoPage";
 import DogTrunfoPage from "./pages/DogTrunfoPage";
 import HomePage from "./pages/HomePage";
 import InstructionsPage from "./pages/InstructionsPage";
+import ResultPage from "./pages/ResultPage";
 
 function Routes() {
   return(
@@ -16,6 +17,7 @@ function Routes() {
       <Route exact path="/deck" component={ ChooseDeckPage } />
       <Route exact path="/gameDogTrunfo" component={ DogTrunfoPage } />
       <Route exact path="/gameCustomDeck" component={ CustomTrunfoPage } />
+      <Route exact path="/results" component={ ResultPage } />
     </Switch>
   )
 }
