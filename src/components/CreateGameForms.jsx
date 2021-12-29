@@ -98,7 +98,7 @@ function CreateGameForms() {
         <button 
           type="submit" 
           disabled={ disabled } 
-          className="bg-indigo-600 px-4 py-2 rounded-lg text-white font-medium w-24 disabled:bg-indigo-300">
+          className="bg-indigo-600 px-4 py-2 rounded-lg text-white font-medium w-24 disabled:bg-indigo-300 disabled:cursor-not-allowed">
           Salvar
         </button>
       </div>

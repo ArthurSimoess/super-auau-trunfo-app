@@ -74,7 +74,7 @@ function HomePage () {
                   </div>
                   <button
                     type="button"
-                    className="bg-indigo-600 px-4 py-2 rounded-lg text-white font-medium w-full disabled:bg-indigo-300"
+                    className="bg-indigo-600 px-4 py-2 rounded-lg text-white font-medium w-full disabled:bg-indigo-300 disabled:cursor-not-allowed"
                     name="game"
                     onClick={ handleClick }
                     disabled={ disabledBtn }

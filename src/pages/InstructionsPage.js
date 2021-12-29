@@ -79,7 +79,7 @@ function InstructionsPage() {
             </div>
             <button
               type="button"
-              className="bg-indigo-500 px-4 py-2 rounded-lg text-white font-medium w-full disabled:bg-indigo-300"
+              className="bg-indigo-500 px-4 py-2 rounded-lg text-white font-medium w-full disabled:bg-indigo-300 disabled:cursor-not-allowed"
               disabled={ disabled }
               onClick={ handleClick }
             >

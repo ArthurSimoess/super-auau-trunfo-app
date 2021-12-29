@@ -4,6 +4,7 @@ import MyContext from '../context/MyContext';
 import { getDeck, getStorageDeckInfos } from '../services/localStorage';
 import pikachico from '../images/pikachico.png'
 import customdeck from '../images/customdeck.png'
+import { deckDog } from '../data/DogTrunfo';
 
 function ChooseDeckPage() {
   const history = useHistory();
@@ -46,9 +47,10 @@ function ChooseDeckPage() {
         <div className=" w-screen p-5 flex flex-col items-center justify-center gap-10 md:flex-row md:items-start">
           <div className="flex flex-col items-center border-solid border-8 border-black rounded-lg">
             <img src={pikachico} alt="yorkshire vestido de cachorro" className="w-56 h-72"/>
-            <div className="flex flex-col items-center gap-2 bg-gradient-to-r from-blue-100 to-blue-300 w-56 h-28">
-              <p className="font-bold">Super-Dog-Trunfo</p>
-              <p className="font-bold">Criador: Arthur Simões</p>
+            <div className="flex flex-col items-center gap-2 bg-gradient-to-r from-blue-100 to-blue-300 w-56 h-36 font-bold">
+              <p>Super-Dog-Trunfo</p>
+              <p>Número de cartas: { deckDog.length }</p>
+              <p>Criador: Arthur Simões</p>
               <button
               type="button"
               name="dogTrunfo"
@@ -62,9 +64,10 @@ function ChooseDeckPage() {
           { deck !== '' &&
           <div className="border-solid border-8 border-black rounded-lg">
             <img src={ customdeck } alt="Cartas" className="w-56 h-72" />
-            <div className="flex flex-col items-center gap-2 bg-gradient-to-r from-blue-100 to-blue-300 w-56 h-28">
-              <p className="font-bold">{deckConfig.deckName}</p>
-              <p className="font-bold">{`Criador: ${ deckConfig.creatorName }`}</p>
+            <div className="flex flex-col items-center gap-2 bg-gradient-to-r from-blue-100 to-blue-300 w-56 h-36 font-bold">
+              <p>{deckConfig.deckName}</p>
+              <p>Número de cartas: { deck.length }</p>
+              <p>{`Criador: ${ deckConfig.creatorName }`}</p>
               <button
                 type="button"
                 name="customGame"

@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import MyContext from '../context/MyContext';
 import trophy  from "../images/trophy.svg";
 import finish  from "../images/finish.svg";
+import TieResult from '../components/TieResult';
 
 
 function ResultPage() {
@@ -44,18 +45,18 @@ function ResultPage() {
   }
 
   return (
-    <div className="bg-gray-200 h-screen bg-repeat">
-      { place.tie ?  <div className="mx-auto p-5 bg-indigo-300 w-1/4 rounded-lg text-center mt-10">EMPATE</div> : (
+    <div className="bg-gray-200 h-screen">
+      { place.tie ? <TieResult /> : (
         <div className="flex justify-center gap-8 md:gap-16">
           <img src={ trophy } alt="Troféu" className="w-10 md:w-40"/>
           <div className="flex flex-col items-center pt-10 gap-5 font-bol">
             <p className='md:text-5xl'>CLASSIFICAÇÃO</p>
-            <div className="bg-gradient-to-r from-yellow-200 to-yellow-600 p-2 rounded-md md:p-3">
+            <div className="bg-gradient-to-r from-yellow-200 to-yellow-600 p-2 rounded-md font-bold md:p-3">
               <p className="md:text-2xl text-center">Primeiro Lugar: { place.firstPlace }</p>
               <hr className="border-black border-1 mt-1 mb-1"/>
               <p className="md:text-1xl text-center">Total de rodadas ganhas: { place.firstPoints}</p>
             </div>
-            <div className="bg-gradient-to-r from-gray-300 to-gray-600 p-2 rounded-md  md:p-3">
+            <div className="bg-gradient-to-r from-gray-300 to-gray-600 p-2 rounded-md font-bold  md:p-3">
               <p className="md:text-2xl text-center">Segundo Lugar: { place.secondPlace }</p>
               <hr className="border-black border-1 mt-1 mb-1"/>
               <p className="md:text-1xl text-center">Total de rodadas ganhas: { place.secondPoints}</p>

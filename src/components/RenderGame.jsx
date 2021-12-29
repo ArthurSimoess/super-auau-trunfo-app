@@ -143,7 +143,7 @@ function RenderGame({ deck }) {
                 <button
                   type="button"
                   onClick={ handleClickBtn }
-                  className="p-3 bg-gradient-to-r from-gray-50 to-gray-500 hover:p-4 border-4 border-black rounded-xl font-bold"
+                  className="p-2 bg-gradient-to-r from-gray-500 text-white to-gray-900 hover:p-3 hover:text-black border-2 border-indigo-200  rounded-xl font-bold"
                 >
                   Nova Rodada
                 </button>
@@ -170,11 +170,9 @@ function RenderGame({ deck }) {
                       handleClick={ handleClickAttr }
                     />
                 </div>
-                <div className="flex flex-col items-center gap-3 border-black border-4 p-3 rounded-md bg-gradient-to-r from-gray-50 to-gray-500 font-bold w-60 text-lg sm:w-auto">
-                  <p>Como jogar:</p>
-                  <p className="text-center text-gray-900 sm:text-justify">Escolha um atributo(Ataque,Defesa ou Velocidade) e clique nele</p>
+                <div className="pb-64">
+                  <p className="text-center text-black font-bold text-md sm: text-xl">*Clique em um atributo para jogar(Atk, Def ou Vel)</p>
                 </div>
-                <div className="pb-56"></div>
               </div>
             )     
             }
