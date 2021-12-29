@@ -44,7 +44,7 @@ function HomePage () {
               <form>
                   <div className="mb-3">
                     <label htmlFor="name" className="text-base text-gray-800">
-                    <i class="fas fa-user"></i> Primeiro jogador:
+                    <i className="fas fa-user"></i> Primeiro jogador:
                       <input
                         name="player1"
                         id="name1"
@@ -59,7 +59,7 @@ function HomePage () {
                   </div>
                   <div className="mb-6">
                   <label htmlFor="name" className="text-base text-gray-800">
-                  <i class="fas fa-user"></i> Segundo jogador:
+                  <i className="fas fa-user"></i> Segundo jogador:
                     <input
                       name="player2"
                       id="name"

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from 'react'
 
 function FilterInputs({ name, type, onChange, value, checked, disabled, className, placeholder, label }) {
@@ -19,6 +20,18 @@ function FilterInputs({ name, type, onChange, value, checked, disabled, classNam
       </label>
     </div>
     )
+}
+
+FilterInputs.propTypes = {
+  checked: PropTypes.bool,
+  className: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+  label: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  value: PropTypes.string,
 }
 
 export default FilterInputs;

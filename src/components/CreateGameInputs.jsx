@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useContext } from "react";
 import MyContext from "../context/MyContext";
 
@@ -23,6 +24,16 @@ function CreateGameInputs({ type, name, placeholder, label, maxLength, max, min 
         </label>
     </>
   )
+}
+
+CreateGameInputs.propTypes = {
+  label: PropTypes.string.isRequired,
+  max: PropTypes.string,
+  maxLength: PropTypes.string,
+  min: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  type: PropTypes.string.isRequired,
 }
 
 export default CreateGameInputs;

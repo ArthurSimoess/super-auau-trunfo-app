@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from 'react';
 
 function Card ({ name, description, firstAttr, secondAttr, thirdAttr,img, rarity, cardTrunfo }) {;
@@ -31,6 +32,17 @@ function Card ({ name, description, firstAttr, secondAttr, thirdAttr,img, rarity
             }
       </section>
   )
+}
+
+Card.propTypes = {
+  cardTrunfo: PropTypes.bool.isRequired,
+  description: PropTypes.string.isRequired,
+  firstAttr: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  rarity: PropTypes.string.isRequired,
+  secondAttr: PropTypes.string.isRequired,
+  thirdAttr: PropTypes.string.isRequired,
 }
 
 export default Card;

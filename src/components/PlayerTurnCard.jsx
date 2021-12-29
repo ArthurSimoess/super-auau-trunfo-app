@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from 'react'
 
 function PlayerTurnCard({ playerName }) {
@@ -13,6 +14,10 @@ function PlayerTurnCard({ playerName }) {
       </div>
     </div>
   )
+}
+
+PlayerTurnCard.propTypes = {
+  playerName: PropTypes.string.isRequired,
 }
 
 export default PlayerTurnCard;

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useContext, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import MyContext from '../context/MyContext';
@@ -102,7 +103,6 @@ function RenderGame({ deck }) {
     }
     setGame(false)
   }
-  console.log(count)
 
   return (
       <div>
@@ -177,6 +177,10 @@ function RenderGame({ deck }) {
             )     
             }
        </div>)
+}
+
+RenderGame.propTypes = {
+  deck: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default RenderGame;

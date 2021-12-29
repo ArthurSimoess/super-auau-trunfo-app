@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { useContext } from 'react';
 import MyContext from '../context/MyContext';
 import { removeStorageCard, setStorageTrunfo } from '../services/localStorage';
@@ -23,6 +24,10 @@ function BtnRemoveCard({ name }) {
      Remover Carta
    </button>
   )
+}
+
+BtnRemoveCard.propTypes = {
+  name: PropTypes.string.isRequired,
 }
 
 export default BtnRemoveCard

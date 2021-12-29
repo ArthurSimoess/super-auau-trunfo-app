@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from 'react'
 
 
@@ -64,6 +65,19 @@ function GameCard({ name, img, description, firstAttr, secondAttr,
       </main>
     </>
   )
+}
+
+GameCard.propTypes = {
+  cardTrunfo: PropTypes.bool.isRequired,
+  description: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+  firstAttr: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  img: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  rarity: PropTypes.string.isRequired,
+  secondAttr: PropTypes.string.isRequired,
+  thirdAttr: PropTypes.string.isRequired,
 }
 
 export default GameCard;
