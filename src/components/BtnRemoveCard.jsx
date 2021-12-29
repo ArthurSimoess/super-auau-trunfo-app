@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import MyContext from '../context/MyContext';
 import { removeStorageCard, setStorageTrunfo } from '../services/localStorage';
-import { TrashIcon } from '@heroicons/react/solid'
 
 function BtnRemoveCard({ name }) {
   const { providerValues: { cards, setCards } } = useContext(MyContext)
