@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, HashRouter, Switch } from "react-router-dom";
 import ChooseDeckPage from "./pages/ChooseDeckPage";
 import CreateGame from "./pages/CreateGame";
 import CustomTrunfoPage from "./pages/CustomTrunfoPage";
@@ -10,7 +10,7 @@ import ResultPage from "./pages/ResultPage";
 
 function Routes() {
   return(
-    <Switch>
+    <HashRouter>
       <Route exact path="/" component={ HomePage }/>
       <Route exact path="/instructions" component={ InstructionsPage } />
       <Route exact path="/createGame" component={ CreateGame } />
@@ -18,7 +18,7 @@ function Routes() {
       <Route exact path="/gameDogTrunfo" component={ DogTrunfoPage } />
       <Route exact path="/gameCustomDeck" component={ CustomTrunfoPage } />
       <Route exact path="/results" component={ ResultPage } />
-    </Switch>
+    </HashRouter>
   )
 }
 

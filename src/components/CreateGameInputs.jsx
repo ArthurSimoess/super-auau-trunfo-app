@@ -17,7 +17,7 @@ function CreateGameInputs({ type, name, placeholder, label, maxLength, max, min 
           maxLength={ maxLength }
           max={ max }
           min= { min }
-          autocomplete="off"
+          autoComplete="off"
           className="block border rounded w-full py-1 px-2 text-black shadow-sd shadow-white"
           />
         </label>

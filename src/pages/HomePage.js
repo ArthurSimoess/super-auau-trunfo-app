@@ -36,7 +36,7 @@ function HomePage () {
   }
 
   return(
-      <div className="bg-gradient-to-r from-gray-500 to-indigo-200 sm:h-screen pb-44">
+      <div className="bg-gradient-to-r from-gray-500 to-indigo-200 sm:h-screen pb-48">
         <div>
           <img src={ cardImg } alt="cards" className="w-52 mx-auto pt-10 mb-5"/>
           <h1 className="text-center text-2xl font-bold mb-5">Super-Tryunfo</h1>

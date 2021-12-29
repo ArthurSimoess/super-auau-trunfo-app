@@ -60,7 +60,7 @@ function InstructionsPage() {
               className="block border rounded w-full py-1 px-2 text-neutral-900"
               value={ deckConfig.deckName }
               onChange={ handleChange }
-              autocomplete="off"
+              autoComplete="off"
             />
         </label>
             </div>
@@ -73,7 +73,7 @@ function InstructionsPage() {
               className="block border rounded w-full py-1 px-2 text-neutral-900"
               value={ deckConfig.creatorName }
               onChange={ handleChange }
-              autocomplete="off"
+              autoComplete="off"
             />
         </label>
             </div>
