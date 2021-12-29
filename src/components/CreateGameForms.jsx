@@ -44,6 +44,7 @@ function CreateGameForms() {
         <CreateGameInputs
           type="text"
           name="name"
+          maxLength="28"
           placeHolder="Digite o nome da carta"
           label="Nome"
         />
