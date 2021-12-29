@@ -38,11 +38,10 @@ function ChooseDeckPage() {
 
   function backHome() {
     history.push('/')
-    window.location.reload();
   }
 
   return (
-      <div className="bg-Game-Time bg-cover bg-center flex flex-col items-center gap-2 sm:h-screen">
+      <div className="bg-Game-Time bg-cover bg-center flex flex-col items-center gap-2 pb-32  sm:h-screen">
         <div className=" w-screen p-5 flex flex-col items-center justify-center gap-10 md:flex-row md:items-start">
           <div className="flex flex-col items-center border-solid border-8 border-black rounded-lg">
             <img src={pikachico} alt="yorkshire vestido de cachorro" className="w-56 h-72"/>

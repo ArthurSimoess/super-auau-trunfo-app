@@ -1,7 +1,6 @@
-import React, {useEffect} from "react";
+import React from "react";
 import RenderGame from "../components/RenderGame";
 import { deckDog } from '../data/DogTrunfo'
-import { useLocation } from "react-router-dom";
 
 
 function DogTrunfoPage() {
