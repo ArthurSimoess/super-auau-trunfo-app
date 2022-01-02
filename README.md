@@ -42,6 +42,8 @@ Neste projeto foi desenvolvido um jogo no estilo Super Trunfo! Ao utilizar essa 
 
   * Visualizar todas as cartas que foram adicionadas ao baralho;
 
+  * Ao recarregar ou sair da página todas as cartas criadas continuam salvas, podendo o usuário continuar de onde parou;
+
   * Salvar o baralho no localStorage;
 
   * Jogar com o baralho criado;
