@@ -50,11 +50,11 @@ Neste projeto foi desenvolvido um jogo no estilo Super Trunfo! Ao utilizar essa 
 
   * Visualizar o resultado do jogo.
 
-##Aplicação
+## Aplicação
 
-###Tela de Login e Jogo
+### Tela de Login e Jogo
 
-<p align="center">
-   <img width="470" height="300" src="src/assets/to_readme/logingame.gif"
+<p>
+   <img width="500" height="300" src="src/assets/to_readme/logingame.gif"
 </p>
 
