@@ -85,7 +85,7 @@ function CreateCardsList() {
                 onChange={ handleChange }
               />
             </div>
-            <div className="flex flex-col items-center justify-center gap-10 flex-wrap md:flex-row">
+            <div className="flex flex-col items-center justify-center gap-20 flex-wrap md:flex-row">
               {
                 filterCards().map((card, index) => (
                   <div key={ index } className="pt-10 flex flex-col items-center">
