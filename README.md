@@ -55,6 +55,24 @@ Neste projeto foi desenvolvido um jogo no estilo Super Trunfo! Ao utilizar essa 
 ### Tela de Login e Jogo
 
 <p>
-   <img width="500" height="300" src="src/assets/to_readme/logingame.gif"
+   <img width="550" height="350" src="src/assets/to_readme/logingame.gif"
+</p>
+ 
+### Tela de resultado
+ 
+<p>
+   <img width="550" height="350" src="src/assets/to_readme/resultado.gif"
+</p>
+ 
+### Tela de criação de cartas
+ 
+<p>
+   <img width="550" height="350" src="src/assets/to_readme/creationcard.gif"
+</p>
+ 
+### Filtro de cartas
+ 
+<p>
+   <img width="550" height="350" src="src/assets/to_readme/filter.gif"
 </p>
 
