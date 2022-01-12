@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
-import RenderGame from "../components/RenderGame";
-import { getDeck } from "../services/localStorage";
+import React from 'react';
+import RenderGame from '../components/RenderGame';
+import { getDeck } from '../services/localStorage';
 
 function CustomTrunfoPage() {
-  const customDeck = getDeck().sort(() => Math.random() - 0.5 );
+  const customDeck = getDeck().sort(() => Math.random() - 0.5);
 
-  return(
+  return (
     <div className="bg-Dice bg-cover bg-center">
       <RenderGame
-        deck={ customDeck }
+        deck={customDeck}
       />
     </div>
-  )
+  );
 }
 
 export default CustomTrunfoPage;

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import MyContext from "./MyContext";
+/* eslint-disable react/jsx-no-constructed-context-values */
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import MyContext from './MyContext';
 
 function MyContextProvider({ children }) {
-
   const [loginName, setName] = useState({
     player1: '',
     player2: '',
@@ -17,44 +18,46 @@ function MyContextProvider({ children }) {
     img: '',
     rarity: 'Normal',
     cardTrunfo: false,
-  })
+  });
 
-  const [disabled, setDisabled] = useState(true)
+  const [disabled, setDisabled] = useState(true);
 
-  const [hasTrunfo, setTrunfo] = useState('')
+  const [hasTrunfo, setTrunfo] = useState('');
 
-  const [cards, setCards] = useState([])
+  const [cards, setCards] = useState([]);
 
-  const [game, setGame] = useState(false)
+  const [game, setGame] = useState(false);
 
-  const [valueAttr, setValueAttr] = useState([])
+  const [valueAttr, setValueAttr] = useState([]);
 
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   const [playerPoints, setPlayerPoints] = useState({
     jogador1: 0,
     jogador2: 0,
-  })
+  });
 
   const [deckConfig, setDeckConfig] = useState({
     deckName: '',
     creatorName: '',
-  })
+  });
 
   function checkInputs() {
-    const { name, description, attack, defense, velocity, img } = formsValues;
-    const array = [ name, description, attack, defense, velocity, img ]
-    const arrayCheck = array.every((element) => element.length > 0)
-    setDisabled(!arrayCheck)
+    const {
+      name, description, attack, defense, velocity, img,
+    } = formsValues;
+    const array = [name, description, attack, defense, velocity, img];
+    const arrayCheck = array.every((element) => element.length > 0);
+    setDisabled(!arrayCheck);
   }
 
-  function handleChangeForms( { target }) {
+  function handleChangeForms({ target }) {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     setFormsValue({
       ...formsValues,
       [name]: value,
-    })
+    });
     checkInputs();
   }
 
@@ -80,13 +83,17 @@ function MyContextProvider({ children }) {
     setPlayerPoints,
     deckConfig,
     setDeckConfig,
-  }
+  };
 
-  return(
-    <MyContext.Provider value={{ providerValues }} >
+  return (
+    <MyContext.Provider value={{ providerValues }}>
       { children }
     </MyContext.Provider>
-  )
+  );
 }
+
+MyContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default MyContextProvider;
