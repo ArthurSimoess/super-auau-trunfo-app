@@ -1,5 +1,5 @@
 import React from 'react';
-import trophy from '../images/trophy.svg';
+import trophy from '../images/trophy.png';
 
 function TieResult() {
   return (

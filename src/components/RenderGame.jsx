@@ -122,7 +122,16 @@ function RenderGame({ deck }) {
                   cardTrunfo={data[0].cardTrunfo}
                   handleClick={handleClickAttr}
                 />
-                <img src="https://events.robocore.net/images/vs.png" alt="Versus" className="w-32" />
+                <div>
+                  <img src="https://events.robocore.net/images/vs.png" alt="Versus" className="w-32 mb-4" />
+                  <button
+                    type="button"
+                    onClick={handleClickBtn}
+                    className="p-2 bg-gray-500 text-white to-gray-900 hover:p-3 hover:text-black border-2 border-white  rounded-xl font-bold"
+                  >
+                    Nova Rodada
+                  </button>
+                </div>
                 <GameCard
                   name={data[1].name}
                   description={data[1].description}
@@ -135,15 +144,6 @@ function RenderGame({ deck }) {
                   cardTrunfo={data[1].cardTrunfo}
                   handleClick={handleClickAttr}
                 />
-              </div>
-              <div className="flex items-center justify-center pt-3">
-                <button
-                  type="button"
-                  onClick={handleClickBtn}
-                  className="p-2 bg-gradient-to-r from-gray-500 text-white to-gray-900 hover:p-3 hover:text-black border-2 border-indigo-200  rounded-xl font-bold"
-                >
-                  Nova Rodada
-                </button>
               </div>
             </section>
           )

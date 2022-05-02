@@ -14,6 +14,7 @@ module.exports = {
         'Game-Time': "url('/src/images/gameTime.jpg')",
         'Pika-Chico': "url('/src/images/pikachico.png')",
         'Custom-Deck': "url('/src/images/customdeck.png')",
+        'Podium': "url('/src/images/podium.jpg')",
         'Dice': "url('/src/images/dice.jpg')",
       },
     },
