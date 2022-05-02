@@ -2,8 +2,9 @@ import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import MyContext from '../context/MyContext';
 import { setStorageName } from '../services/localStorage';
-import cardImg from '../images/cardsimg.svg';
+import homelogo from '../images/homelogo.svg';
 import Footer from '../components/Footer';
+import Instructions from '../components/InstructionsModal';
 
 function HomePage() {
   const { providerValues: { loginName, setName } } = useContext(MyContext);
@@ -37,13 +38,16 @@ function HomePage() {
   }
 
   return (
-    <div className="bg-gradient-to-r from-gray-500 to-indigo-200 h-full 2xl:h-screen">
-      <img src={cardImg} alt="cards" className="w-52 mx-auto pt-10 mb-5" />
-      <h1 className="text-center text-2xl font-bold mb-5">Super-Tryunfo</h1>
-      <div className="bg-white w-80 h-96 rounded-lg mx-auto p-8 shadow-xl">
-        <form>
-          <div className="mb-3">
-            <label htmlFor="name" className="text-base text-gray-800">
+    <div className="h-screen overflow-auto flex">
+      <div className="bg-dog-play w-full bg-center bg-cover hidden md:block" />
+      <div className="bg-yellow-200 rounded-lg flex items-center justify-center p-4 shadow-xl w-full md:w-10/12">
+        <form className="flex flex-col items-center gap-2">
+          <div className="flex flex-col">
+            <img src={homelogo} alt="card-logo" className="w-44" />
+            <h1 className="text-center text-4xl font-bold text-vlack">Dog-Trunfo</h1>
+          </div>
+          <div>
+            <label htmlFor="name" className="text-base text-black font-bold">
               <i className="fas fa-user" />
               {' '}
               Primeiro jogador:
@@ -56,11 +60,12 @@ function HomePage() {
                 type="text"
                 placeholder="Nome do primeiro jogador"
                 autoComplete="off"
+                data-testid="firstInput"
               />
             </label>
           </div>
-          <div className="mb-6">
-            <label htmlFor="name" className="text-base text-gray-800">
+          <div>
+            <label htmlFor="name" className="text-base text-gray-800 font-bold">
               <i className="fas fa-user" />
               {' '}
               Segundo jogador:
@@ -73,35 +78,30 @@ function HomePage() {
                 type="text"
                 placeholder="Nome do segundo jogador"
                 autoComplete="off"
+                data-testid="secondInput"
               />
             </label>
           </div>
           <button
             type="button"
-            className="bg-indigo-600 px-4 py-2 rounded-lg text-white font-medium w-full disabled:bg-indigo-300 disabled:cursor-not-allowed"
+            className="bg-black px-4 py-2 rounded-lg text-white text-center font-medium disabled:cursor-not-allowed border-2 border-headline"
             name="game"
             onClick={handleClick}
             disabled={disabledBtn}
+            data-testid="gameBtn"
           >
             Jogar
           </button>
+          <hr className="text-black w-full" />
+          <div className="flex flex-col items-center">
+            <p>
+              Ou crie o seu próprio baralho
+            </p>
+            <Instructions />
+          </div>
         </form>
-        <hr className="text-black mt-10" />
-        <div className="mt-5 flex flex-col items-center gap-5">
-          <p>
-            Ou crie o seu próprio baralho
-          </p>
-          <button
-            type="button"
-            className="bg-indigo-600  px-4 py-2 rounded-lg text-white"
-            name="instructions"
-            onClick={handleClick}
-          >
-            Criar
-          </button>
-        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

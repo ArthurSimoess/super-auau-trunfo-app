@@ -56,48 +56,36 @@ function RenderGame({ deck }) {
     }
   }
 
-  function playerTurn() {
-    if (count % 2 === 0) {
-      return loginName.player1;
-    }
-    return loginName.player2;
-  }
+  // function playerTurn() {
+  //   if (count % 2 === 0) {
+  //     return loginName.player1;
+  //   }
+  //   return loginName.player2;
+  // }
 
   function turnWinner() {
     if (Number(valueAttr[0].value1) === Number(valueAttr[1].value2)) {
       return (
         <DetailsCard
           name="EMPATE"
-          attrName={valueAttr[0].name1}
-          attrValue={valueAttr[0].value1}
-          playerTurn={playerTurn()}
         />
       );
     } if (Number(valueAttr[0].value1) > Number(valueAttr[1].value2) && count % 2 === 0) {
       return (
         <DetailsCard
           name={loginName.player1}
-          attrName={valueAttr[0].name1}
-          attrValue={valueAttr[0].value1}
-          playerTurn={playerTurn()}
         />
       );
     } if (Number(valueAttr[0].value1) < Number(valueAttr[1].value2) && count % 2 !== 0) {
       return (
         <DetailsCard
           name={loginName.player1}
-          attrName={valueAttr[0].name1}
-          attrValue={valueAttr[0].value1}
-          playerTurn={playerTurn()}
         />
       );
     }
     return (
       <DetailsCard
         name={loginName.player2}
-        attrName={valueAttr[0].name1}
-        attrValue={valueAttr[0].value1}
-        playerTurn={playerTurn()}
       />
     );
   }
@@ -148,7 +136,7 @@ function RenderGame({ deck }) {
                   handleClick={handleClickAttr}
                 />
               </div>
-              <div className="flex items-center justify-center pt-3 pb-40">
+              <div className="flex items-center justify-center pt-3">
                 <button
                   type="button"
                   onClick={handleClickBtn}
@@ -179,9 +167,6 @@ function RenderGame({ deck }) {
                     cardTrunfo={data[0].cardTrunfo}
                     handleClick={handleClickAttr}
                   />
-                </div>
-                <div className="pb-64">
-                  <p className="text-center text-black font-bold text-md sm: text-xl">*Clique em um atributo para jogar(Atk, Def ou Vel)</p>
                 </div>
               </div>
             )

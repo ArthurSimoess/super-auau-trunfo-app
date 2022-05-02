@@ -6,7 +6,7 @@ function DogTrunfoPage() {
   const deckDogTrunfo = deckDog.sort(() => Math.random() - 0.5);
 
   return (
-    <div className="bg-Dice bg-cover bg-center">
+    <div className="bg-bones bg-cover">
       <RenderGame
         deck={deckDogTrunfo}
       />
