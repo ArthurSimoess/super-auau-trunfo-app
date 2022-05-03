@@ -1,17 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import card from '../images/cardslogo.png';
 
 function PlayerTurnCard({ playerName }) {
   return (
-    <div className="flex justify-center items-center gap-10 w-72">
-      <div className="flex items-center gap-2 border-black border-4 p-3 rounded-md bg-gradient-to-r from-gray-200 to-gray-600 font-bold text-lg">
-        <p>Faça sua jogada</p>
-        <div className="flex items-center gap-1">
-          <i className="fas fa-arrow-right" />
-          <p className="text-white">{ playerName }</p>
-          <i className="fas fa-arrow-left" />
-        </div>
-      </div>
+    <div className="flex justify-center items-center bg-yellow-200 border-1 border-black rounded-lg px-2">
+      <img src={card} alt="Cartas de baralho" width="80px" />
+      <p className="m-0 shadow-logo text-4xl font-bold">{`Jogador: ${playerName}`}</p>
     </div>
   );
 }

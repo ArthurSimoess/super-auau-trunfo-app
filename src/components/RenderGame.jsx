@@ -1,12 +1,13 @@
 /* eslint-disable react/jsx-no-bind */
 import PropTypes from 'prop-types';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import MyContext from '../context/MyContext';
 import { getStorageName } from '../services/localStorage';
 import DetailsCard from './DetailsCard';
 import GameCard from './GameCard';
 import PlayerTurnCard from './PlayerTurnCard';
+import SelectCard from './SelectCard';
 
 function RenderGame({ deck }) {
   const {
@@ -15,6 +16,7 @@ function RenderGame({ deck }) {
       count, setCount, loginName, playerPoints, setPlayerPoints, setName,
     },
   } = useContext(MyContext);
+  const [attrName, setAttrName] = useState('');
   const history = useHistory();
 
   const data = deck;
@@ -25,8 +27,12 @@ function RenderGame({ deck }) {
     }
   }, []);
 
+  console.log(data);
+  console.log(data.length, data[0]);
+
   function handleClickAttr({ target: { name } }) {
     window.scrollTo(0, 0);
+    setAttrName(name);
     setValueAttr([{ value1: data[0][name], name1: name }, { value2: data[1][name], name2: name }]);
     setGame(true);
   }
@@ -56,11 +62,16 @@ function RenderGame({ deck }) {
     }
   }
 
-  function playerTurn() {
+  function player1() {
     if (count % 2 === 0) {
       return loginName.player1;
     }
     return loginName.player2;
+  }
+
+  function player2() {
+    const player = player1() === loginName.player1 ? loginName.player2 : loginName.player1;
+    return player;
   }
 
   function turnWinner() {
@@ -68,36 +79,24 @@ function RenderGame({ deck }) {
       return (
         <DetailsCard
           name="EMPATE"
-          attrName={valueAttr[0].name1}
-          attrValue={valueAttr[0].value1}
-          playerTurn={playerTurn()}
         />
       );
     } if (Number(valueAttr[0].value1) > Number(valueAttr[1].value2) && count % 2 === 0) {
       return (
         <DetailsCard
           name={loginName.player1}
-          attrName={valueAttr[0].name1}
-          attrValue={valueAttr[0].value1}
-          playerTurn={playerTurn()}
         />
       );
     } if (Number(valueAttr[0].value1) < Number(valueAttr[1].value2) && count % 2 !== 0) {
       return (
         <DetailsCard
           name={loginName.player1}
-          attrName={valueAttr[0].name1}
-          attrValue={valueAttr[0].value1}
-          playerTurn={playerTurn()}
         />
       );
     }
     return (
       <DetailsCard
         name={loginName.player2}
-        attrName={valueAttr[0].name1}
-        attrValue={valueAttr[0].value1}
-        playerTurn={playerTurn()}
       />
     );
   }
@@ -117,71 +116,60 @@ function RenderGame({ deck }) {
     <div>
       {
           game ? (
-            <section className="pt-10">
+            <section className="pt-2">
               {
                   turnWinner()
                 }
-              <div className="flex flex-col items-center justify-center gap-5 pt-10 md:flex-row pb-5">
-                <GameCard
-                  name={data[0].name}
+              <div className="flex flex-col items-center justify-center gap-5 pt-4 md:flex-row pb-5">
+                <SelectCard
+                  data={data[0]}
+                  player={player1()}
+                  win={data[0][attrName] > data[1][attrName]}
                   description={data[0].description}
-                  firstAttr={data[0].attack}
-                  secondAttr={data[0].defense}
-                  thirdAttr={data[0].velocity}
-                  img={data[0].img}
-                  disabled
-                  rarity={data[0].rarity}
-                  cardTrunfo={data[0].cardTrunfo}
-                  handleClick={handleClickAttr}
+                  valueAttr={data[0][attrName]}
+                  attrName={attrName}
                 />
-                <img src="https://events.robocore.net/images/vs.png" alt="Versus" className="w-32" />
-                <GameCard
-                  name={data[1].name}
+                <div>
+                  <img src="https://events.robocore.net/images/vs.png" alt="Versus" className="w-32 mb-4" />
+                  <button
+                    type="button"
+                    onClick={handleClickBtn}
+                    className="p-2 bg-gray-500 text-white to-gray-900 hover:p-3 hover:text-black border-2 border-white  rounded-xl font-bold"
+                  >
+                    Nova Rodada
+                  </button>
+                </div>
+                <SelectCard
+                  data={data[1]}
+                  player={player2()}
+                  win={data[1][attrName] > data[0][attrName]}
                   description={data[1].description}
-                  firstAttr={data[1].attack}
-                  secondAttr={data[1].defense}
-                  thirdAttr={data[1].velocity}
-                  img={data[1].img}
-                  disabled
-                  rarity={data[1].rarity}
-                  cardTrunfo={data[1].cardTrunfo}
-                  handleClick={handleClickAttr}
+                  valueAttr={data[1][attrName]}
+                  attrName={attrName}
                 />
-              </div>
-              <div className="flex items-center justify-center pt-3 pb-40">
-                <button
-                  type="button"
-                  onClick={handleClickBtn}
-                  className="p-2 bg-gradient-to-r from-gray-500 text-white to-gray-900 hover:p-3 hover:text-black border-2 border-indigo-200  rounded-xl font-bold"
-                >
-                  Nova Rodada
-                </button>
               </div>
             </section>
           )
             : (
-              <div className="flex flex-col items-center justify-center pt-20">
+              <div className="flex flex-col items-center justify-center pt-2">
                 {
                     count % 2 === 0 ? (
                       <PlayerTurnCard playerName={loginName.player1} />
                     ) : (
                       <PlayerTurnCard playerName={loginName.player2} />)
                   }
-                <div className="pt-10 pb-10">
+                <div className="pt-10">
                   <GameCard
                     name={data[0].name}
                     description={data[0].description}
-                    firstAttr={data[0].attack}
-                    secondAttr={data[0].defense}
-                    thirdAttr={data[0].velocity}
+                    firstAttr={data[0].mordida}
+                    secondAttr={data[0].fome}
+                    thirdAttr={data[0].fofura}
                     img={data[0].img}
                     rarity={data[0].rarity}
                     cardTrunfo={data[0].cardTrunfo}
                     handleClick={handleClickAttr}
                   />
-                </div>
-                <div className="pb-64">
-                  <p className="text-center text-black font-bold text-md sm: text-xl">*Clique em um atributo para jogar(Atk, Def ou Vel)</p>
                 </div>
               </div>
             )

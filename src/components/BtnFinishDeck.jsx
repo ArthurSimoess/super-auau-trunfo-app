@@ -24,12 +24,12 @@ function BtnFinishDeck() {
         <button
           type="button"
           onClick={handleClick}
-          className="p-3 mx-auto bg-indigo-600 rounded-lg flex flex-col items-center"
+          className="p-2 mx-auto bg-black text-white rounded-lg flex items-center"
         >
-          <p className="font-bold">Salvar Baralho</p>
-          <p>
+          <p className="m-0">
             <SaveIcon className="w-10" />
           </p>
+          <p className="m-0 font-bold">Salvar Baralho</p>
         </button>
       );
     }
@@ -37,7 +37,7 @@ function BtnFinishDeck() {
   }
 
   return (
-    <div className="w-screen bg-gradient-to-r from-stone-600 to-stone-900 pb-10">
+    <div className="w-screen pt-8">
       {
         renderFinishBtn()
       }

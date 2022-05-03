@@ -6,7 +6,7 @@ function CustomTrunfoPage() {
   const customDeck = getDeck().sort(() => Math.random() - 0.5);
 
   return (
-    <div className="bg-Dice bg-cover bg-center">
+    <div className="bg-container h-screen overflow-auto md:flex justify-center items-center">
       <RenderGame
         deck={customDeck}
       />

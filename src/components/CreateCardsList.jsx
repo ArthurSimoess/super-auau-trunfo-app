@@ -5,6 +5,7 @@ import Card from './card';
 import MyContext from '../context/MyContext';
 import BtnRemoveCard from './BtnRemoveCard';
 import FilterInputs from './FilterInputs';
+import BtnFinishDeck from './BtnFinishDeck';
 
 function CreateCardsList() {
   const { providerValues: { cards, setCards } } = useContext(MyContext);
@@ -53,7 +54,7 @@ function CreateCardsList() {
   }
 
   return (
-    <div className="pt-10 pb-10 w-screen  bg-gradient-to-r from-stone-600 to-stone-900">
+    <div className="pt-10 pb-10 w-screen bg-yellow-200 overflow-auto">
       <div className="flex flex-col items-center gap-5 bg-Search-Back bg-cover bg-center w-96 mx-auto p-10 rounded-lg shadow-white shadow-sm">
         <FilterInputs
           name="filterByName"
@@ -92,9 +93,9 @@ function CreateCardsList() {
                     <Card
                       name={card.name}
                       description={card.description}
-                      firstAttr={card.attack}
-                      secondAttr={card.defense}
-                      thirdAttr={card.velocity}
+                      firstAttr={card.mordida}
+                      secondAttr={card.fome}
+                      thirdAttr={card.fofura}
                       img={card.img}
                       rarity={card.rarity}
                       cardTrunfo={card.cardTrunfo}
@@ -106,6 +107,7 @@ function CreateCardsList() {
                 ))
               }
       </div>
+      <BtnFinishDeck />
     </div>
   );
 }

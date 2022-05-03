@@ -1,9 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import MyContext from '../context/MyContext';
-import trophy from '../images/trophy.svg';
-import finish from '../images/finish.svg';
+import trophy from '../images/trophy.png';
 import TieResult from '../components/TieResult';
+import gold from '../images/gold.png';
+import silver from '../images/silver.png';
+import again from '../images/playagain.png';
 
 function ResultPage() {
   const { providerValues: { playerPoints, loginName } } = useContext(MyContext);
@@ -44,49 +46,54 @@ function ResultPage() {
   }
 
   return (
-    <div className="bg-gray-200 h-screen">
+    <div className="bg-gray-200 h-screen overflow-auto">
       { place.tie ? <TieResult /> : (
         <div className="flex justify-center gap-8 md:gap-16">
-          <img src={trophy} alt="Troféu" className="w-10 md:w-40" />
           <div className="flex flex-col items-center pt-10 gap-5 font-bol">
-            <p className="md:text-5xl">CLASSIFICAÇÃO</p>
-            <div className="bg-gradient-to-r from-yellow-200 to-yellow-600 p-2 rounded-md font-bold md:p-3">
-              <p className="md:text-2xl text-center">
-                Primeiro Lugar:
-                { place.firstPlace }
-              </p>
-              <hr className="border-black border-1 mt-1 mb-1" />
-              <p className="md:text-1xl text-center">
-                Total de rodadas ganhas:
-                { place.firstPoints}
-              </p>
+            <div className="flex gap-5 items-center">
+              <img src={trophy} alt="Trófeu dourado" />
+              <p className="md:text-5xl font-bold shadow-logo">CLASSIFICAÇÃO</p>
+              <img src={trophy} alt="Trófeu dourado" />
             </div>
-            <div className="bg-gradient-to-r from-gray-300 to-gray-600 p-2 rounded-md font-bold  md:p-3">
-              <p className="md:text-2xl text-center">
-                Segundo Lugar:
-                { place.secondPlace }
-              </p>
-              <hr className="border-black border-1 mt-1 mb-1" />
-              <p className="md:text-1xl text-center">
-                Total de rodadas ganhas:
-                { place.secondPoints}
-              </p>
+            <div className="bg-gradient-to-r from-yellow-200 to-yellow-600 p-2 rounded-md font-bold md:p-3 flex w-96">
+              <img src={gold} alt="gold medal" />
+              <div>
+                <p className="md:text-2xl text-center shadow-logo">
+                  {`Primeiro lugar: ${place.firstPlace}`}
+                </p>
+                <hr className="border-black border-1 mt-1 mb-1" />
+                <p className="md:text-1xl text-center shadow-logo">
+                  {`Total de rodadas ganhas: ${place.firstPoints}`}
+                </p>
+              </div>
+            </div>
+            <div className="bg-gradient-to-r from-gray-300 to-gray-600 p-2 rounded-md font-bold  md:p-3 flex  w-96">
+              <img src={silver} alt="silver medal" />
+              <div>
+                <p className="md:text-2xl text-center shadow-logo">
+                  {`Segundo lugar: ${place.secondPlace}`}
+                </p>
+                <hr className="border-black border-1 mt-1 mb-1" />
+                <p className="md:text-1xl text-center shadow-logo">
+                  {`Total de rodadas ganhas: ${place.secondPoints}`}
+                </p>
+              </div>
             </div>
           </div>
-          <img src={trophy} alt="Troféu" className="w-10 md:w-40" />
         </div>
       )}
-      <div className="flex flex-col items-center gap-10 pt-20 bg-gray-200">
-        <img src={finish} alt="Finish" className="w-96 md:w-2/6" />
+      <div className="flex w-full justify-center pt-10">
         <button
           type="button"
           onClick={handleClick}
-          className="p-2 bg-gradient-to-r from-indigo-200 to-indigo-400 rounded-lg border-4 border-black hover:border-white hover:p-3"
+          className="p-2 bg-black rounded-lg border-1 border-black hover:border-white hover:p-3"
         >
-          Jogar Novamente
+          <div className="flex items-center gap-1 justify-center">
+            <img src={again} alt="cards" width="50px" />
+            <p className="m-0 font-bold text-white">Jogar Novamente</p>
+          </div>
         </button>
       </div>
-      <div className="p-5 bg-gray-200" />
     </div>
   );
 }

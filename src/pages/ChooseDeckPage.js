@@ -5,6 +5,7 @@ import { getDeck, getStorageDeckInfos } from '../services/localStorage';
 import pikachico from '../images/pikachico.png';
 import customdeck from '../images/customdeck.png';
 import deckDog from '../data/DogTrunfo';
+import exit from '../images/exit.png';
 
 function ChooseDeckPage() {
   const history = useHistory();
@@ -42,11 +43,18 @@ function ChooseDeckPage() {
   }
 
   return (
-    <div className="bg-Game-Time bg-cover bg-center flex flex-col items-center gap-2 pb-60  sm:h-screen">
+    <div className="bg-container bg-center flex flex-col items-center gap-2 h-screen overflow-auto">
+      <button
+        className="text-black rounded-lg font-bold absolute left-3 top-3"
+        onClick={backHome}
+        type="button"
+      >
+        <img src={exit} alt="exit" className="w-14" />
+      </button>
       <div className=" w-screen p-5 flex flex-col items-center justify-center gap-10 md:flex-row md:items-start">
-        <div className="flex flex-col items-center border-solid border-8 border-black rounded-lg">
-          <img src={pikachico} alt="yorkshire vestido de cachorro" className="w-56 h-72" />
-          <div className="flex flex-col items-center gap-2 bg-gradient-to-r from-blue-100 to-blue-300 w-56 h-36 font-bold">
+        <div className="flex flex-col items-center border-solid border-3 border-black rounded-lg shadow-md">
+          <img src={pikachico} alt="yorkshire vestido de pikachu" className="w-56 h-72" />
+          <div className="flex flex-col items-center gap-1 bg-white w-56 h-48 font-bold">
             <p>Super-Dog-Trunfo</p>
             <p>
               Número de cartas:
@@ -57,7 +65,7 @@ function ChooseDeckPage() {
             <button
               type="button"
               name="dogTrunfo"
-              className="px-2 py-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-purple-400 hover:to-indigo-500 rounded-lg"
+              className="border-2 border-black p-2 hover:bg-bones"
               onClick={handleClick}
             >
               JOGAR
@@ -66,9 +74,9 @@ function ChooseDeckPage() {
         </div>
         { deck !== ''
           && (
-          <div className="border-solid border-8 border-black rounded-lg">
+          <div className="flex flex-col items-center border-solid border-3 border-black rounded-lg shadow-md">
             <img src={customdeck} alt="Cartas" className="w-56 h-72" />
-            <div className="flex flex-col items-center gap-2 bg-gradient-to-r from-blue-100 to-blue-300 w-56 h-36 font-bold">
+            <div className="flex flex-col items-center gap-1 bg-white w-56 h-48 font-bold">
               <p>{deckConfig.deckName}</p>
               <p>
                 Número de cartas:
@@ -79,7 +87,7 @@ function ChooseDeckPage() {
               <button
                 type="button"
                 name="customGame"
-                className="px-2 py-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-purple-400 hover:to-indigo-500 rounded-lg"
+                className="border-2 border-black p-2 hover:bg-bones"
                 onClick={handleClick}
               >
                 JOGAR
@@ -88,13 +96,6 @@ function ChooseDeckPage() {
           </div>
           )}
       </div>
-      <button
-        className="p-3 bg-indigo-600 text-black rounded-lg border-2 border-black font-bold hover:opacity-80 hover:p-4"
-        onClick={backHome}
-        type="button"
-      >
-        Voltar
-      </button>
     </div>
   );
 }

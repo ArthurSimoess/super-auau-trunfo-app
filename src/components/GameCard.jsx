@@ -7,7 +7,7 @@ function GameCard({
 }) {
   return (
     <main>
-      <section className="flex flex-col items-center h-auto w-72 border-solid border-8 border-black bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 shadow-xl sm:w-72 md:w-72 lg:w-72 text-white">
+      <section className="flex flex-col items-center h-auto border-solid border-8 border-black bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 shadow-xl w-80 text-white">
         <div className="bg-gradient-to-r from-gray-500 to-gray-900 w-11/12 h-10 mt-3 rounded-t-xl flex justify-center items-center">
           <p>{ name }</p>
         </div>
@@ -21,9 +21,9 @@ function GameCard({
           <label htmlFor="first">
             <input
               type="button"
-              name="attack"
-              value={`Atk: ${firstAttr}`}
-              className="p-2 bg-gradient-to-r from-green-300 to-blue-400 hover:from-pink-500 hover:to-yellow-500 focus:ring-4 ring-white disabled:opacity-40 disabled:cursor-not-allowed rounded-xl cursor-pointer text-black font-bold"
+              name="mordida"
+              value={`Mordida: ${firstAttr}`}
+              className="py-2 px-1 bg-gradient-to-r from-green-300 to-blue-400 hover:from-pink-500 hover:to-yellow-500 focus:ring-4 ring-white disabled:opacity-40 disabled:cursor-not-allowed rounded-xl cursor-pointer text-black font-bold"
               onClick={handleClick}
               disabled={disabled}
             />
@@ -31,9 +31,9 @@ function GameCard({
           <label htmlFor="second">
             <input
               type="button"
-              name="defense"
-              value={`Def: ${secondAttr}`}
-              className="p-2 bg-gradient-to-r from-green-300 to-blue-400 hover:from-pink-500 hover:to-yellow-500 focus:ring-4 ring-white disabled:opacity-40 disabled:cursor-not-allowed rounded-xl cursor-pointer text-black font-bold"
+              name="fome"
+              value={`Fome: ${secondAttr}`}
+              className="py-2 px-1  bg-gradient-to-r from-green-300 to-blue-400 hover:from-pink-500 hover:to-yellow-500 focus:ring-4 ring-white disabled:opacity-40 disabled:cursor-not-allowed rounded-xl cursor-pointer text-black font-bold"
               onClick={handleClick}
               disabled={disabled}
             />
@@ -41,16 +41,16 @@ function GameCard({
           <label htmlFor="third">
             <input
               type="button"
-              name="velocity"
-              className="p-2 bg-gradient-to-r from-green-300 to-blue-400 hover:from-pink-500 hover:to-yellow-500 focus:ring-4 ring-white disabled:opacity-40 disabled:cursor-not-allowed rounded-xl cursor-pointer text-black font-bold"
-              value={`Vel: ${thirdAttr}`}
+              name="fofura"
+              className="py-2 px-1 bg-gradient-to-r from-green-300 to-blue-400 hover:from-pink-500 hover:to-yellow-500 focus:ring-4 ring-white disabled:opacity-40 disabled:cursor-not-allowed rounded-xl cursor-pointer text-black font-bold"
+              value={`Fofura: ${thirdAttr}`}
               onClick={handleClick}
               disabled={disabled}
             />
           </label>
         </div>
-        <div className="bg-black w-2/4 text-white text-center mt-5 rounded-t-xl p-1">
-          <p>{ rarity }</p>
+        <div className="bg-black w-2/4 text-white text-center mt-4 rounded-t-xl p-1">
+          <p className="m-0">{ rarity }</p>
         </div>
         { cardTrunfo
               && (
