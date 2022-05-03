@@ -86,26 +86,32 @@ function CreateCardsList() {
           onChange={handleChange}
         />
       </div>
-      <div className="flex flex-col items-center justify-center gap-20 flex-wrap md:flex-row">
+      <div className="flex flex-col items-center text-center justify-center gap-20 flex-wrap md:flex-row">
         {
-                filterCards().map((card) => (
-                  <div key={card.name} className="pt-10 flex flex-col items-center">
-                    <Card
-                      name={card.name}
-                      description={card.description}
-                      firstAttr={card.mordida}
-                      secondAttr={card.fome}
-                      thirdAttr={card.fofura}
-                      img={card.img}
-                      rarity={card.rarity}
-                      cardTrunfo={card.cardTrunfo}
-                    />
-                    <BtnRemoveCard
-                      nome={card.name}
-                    />
-                  </div>
-                ))
-              }
+          cards.length === 0 && <p className="text-2xl font-bold pt-12">O seu baralho ainda não possui cartas!</p>
+        }
+        {
+          (cards.length > 0 && filterCards().length === 0) ? <p className="text-2xl text-center font-bold pt-12">Carta não encontrada, verifique se sua pesquisa foi feita corretamente</p> : ''
+        }
+        {
+            filterCards().map((card) => (
+              <div key={card.name} className="pt-10 flex flex-col items-center">
+                <Card
+                  name={card.name}
+                  description={card.description}
+                  firstAttr={card.mordida}
+                  secondAttr={card.fome}
+                  thirdAttr={card.fofura}
+                  img={card.img}
+                  rarity={card.rarity}
+                  cardTrunfo={card.cardTrunfo}
+                />
+                <BtnRemoveCard
+                  nome={card.name}
+                />
+              </div>
+            ))
+          }
       </div>
       <BtnFinishDeck />
     </div>
