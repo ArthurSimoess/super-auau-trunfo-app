@@ -58,6 +58,7 @@ function HomePage() {
                 onChange={handleChange}
                 className="block border rounded w-full py-1 px-2"
                 type="text"
+                maxLength="11"
                 placeholder="Nome do primeiro jogador"
                 autoComplete="off"
                 data-testid="firstInput"
@@ -76,6 +77,7 @@ function HomePage() {
                 onChange={handleChange}
                 className="block border rounded w-full py-1 px-2"
                 type="text"
+                maxLength="11"
                 placeholder="Nome do segundo jogador"
                 autoComplete="off"
                 data-testid="secondInput"

@@ -58,7 +58,7 @@ function CreateGameForms() {
           label="Nome"
         />
         <label htmlFor="description">
-          <p className="m-0 font-bold text-xl shadow-black">
+          <p className="m-0 font-bold text-xl shadow-text">
             Descrição
           </p>
           <textarea
@@ -100,7 +100,7 @@ function CreateGameForms() {
             label="Imagem"
           />
           <i
-            className="far fa-question-circle text-xl cursor-pointer pt-4 shadow-black font-bold"
+            className="far fa-question-circle text-xl cursor-pointer pt-4 shadow-text font-bold"
             onClick={doubtClick}
           />
         </div>
@@ -110,16 +110,16 @@ function CreateGameForms() {
           <option value="Muito Raro">Muito raro</option>
         </select>
         { getStorageTrunfo() === 'true'
-          ? <span>Você já tem um Super Trunfo em seu baralho</span>
+          ? <span className="shadow-text">Você já tem um Super Trunfo em seu baralho</span>
           : (
             <label htmlFor="cardTrunfo">
-              Super-Trunfo:
+              <p className="shadow-text font-bold m-0 text-xl">Super-Trunfo</p>
               <input
                 type="checkbox"
                 name="cardTrunfo"
                 checked={formsValues.cardTrunfo}
                 onChange={handleChangeForms}
-                className="block border rounded w-full py-1 px-2 text-black shadow-white"
+                className="block border rounded w-full h-4 text-black shadow-text"
               />
             </label>
           )}

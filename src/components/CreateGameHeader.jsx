@@ -19,14 +19,14 @@ function CreateGameHeader() {
         <img src={deck} alt="Baralho de cartas" width="60px" />
         <p className="m-0 text-2xl text-black font-bold">
           Nome do baralho:
-          <span className="text-red-500 m-0">{deckConfig.deckName}</span>
+          <span className="text-black font-bold uppercase m-0">{deckConfig.deckName}</span>
         </p>
       </div>
       <div className="flex items-center w-72 sm:w-60 lg:w-[25.5rem]">
         <img src={creator} alt="Ícone de usuário" width="60px" />
         <p className="m-0 text-2xl text-black font-bold">
           Criador do baralho:
-          <span className="text-red-500 m-0">{deckConfig.creatorName}</span>
+          <span className="text-black uppercase font-bold m-0">{deckConfig.creatorName}</span>
         </p>
       </div>
     </header>

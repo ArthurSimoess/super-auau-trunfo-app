@@ -13,7 +13,7 @@ function SelectCard({
       </div>
       <section className="flex flex-col items-center h-auto w-72 border-solid border-8 border-black bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 shadow-xl sm:w-72 md:w-72 lg:w-72 text-white">
         <div className="bg-gradient-to-r from-gray-500 to-gray-900 w-11/12 h-10 mt-3 rounded-t-xl flex justify-center items-center">
-          <p>{ data.name }</p>
+          <p className="m-0 font-bold">{ data.name }</p>
         </div>
         <div className="w-11/12 h-44 ronded-xl">
           <img src={data.img} alt={data.name} className="h-44 w-full" />

@@ -9,7 +9,7 @@ function CreateGameInputs({
 
   return (
     <label htmlFor={name}>
-      <p className="m-0 font-bold text-xl shadow-black">
+      <p className="m-0 font-bold text-xl shadow-text">
         {label}
       </p>
       <input
