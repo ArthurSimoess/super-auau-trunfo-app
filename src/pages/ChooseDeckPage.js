@@ -74,9 +74,9 @@ function ChooseDeckPage() {
         </div>
         { deck !== ''
           && (
-          <div className="border-solid border-8 border-black rounded-lg">
+          <div className="flex flex-col items-center border-solid border-3 border-black rounded-lg shadow-md">
             <img src={customdeck} alt="Cartas" className="w-56 h-72" />
-            <div className="flex flex-col items-center gap-2 bg-gradient-to-r from-blue-100 to-blue-300 w-56 h-36 font-bold">
+            <div className="flex flex-col items-center gap-1 bg-white w-56 h-48 font-bold">
               <p>{deckConfig.deckName}</p>
               <p>
                 Número de cartas:
@@ -87,7 +87,7 @@ function ChooseDeckPage() {
               <button
                 type="button"
                 name="customGame"
-                className="px-2 py-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-purple-400 hover:to-indigo-500 rounded-lg"
+                className="border-2 border-black p-2 hover:bg-bones"
                 onClick={handleClick}
               >
                 JOGAR
