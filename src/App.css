@@ -1,3 +1,8 @@
 .shadow-logo {
   text-shadow: 2px 2px 4px white;
 }
+
+.bg-container {
+  background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('./images/bones.jpg');
+  background-size: cover;
+}

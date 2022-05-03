@@ -1,14 +1,12 @@
 import React from 'react';
 import RenderGame from '../components/RenderGame';
-import deckDog from '../data/DogTrunfo';
+import sortDeckdog from '../data/DogTrunfo';
 
 function DogTrunfoPage() {
-  const deckDogTrunfo = deckDog.sort(() => Math.random() - 0.5);
-
   return (
-    <div className="bg-bones bg-cover">
+    <div className="bg-container h-screen overflow-auto">
       <RenderGame
-        deck={deckDogTrunfo}
+        deck={sortDeckdog}
       />
     </div>
   );

@@ -1,18 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import win from '../images/matchWin.png';
 
 function DetailsCard({
   name,
 }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-2">
-      <div className="flex items-center">
-        <img src={win} alt="winner" />
-        <p className="text-black font-bold text-xl md:text-4xl uppercase shadow-logo">
-          {`${name} venceu a rodada`}
-        </p>
-      </div>
+    <div className={`flex justify-center items-center bg-gray-500 border-2 rounded-lg border-white border-t-transparent px-2 w-80 mx-auto ${name === 'EMPATE' ? '' : 'hidden'}`}>
+      <p className="text-white font-bold text-xl md:text-4xl uppercase m-0">
+        {name === 'EMPATE' ? 'EMPATE' : ''}
+      </p>
     </div>
   );
 }

@@ -43,7 +43,7 @@ function ChooseDeckPage() {
   }
 
   return (
-    <div className="bg-bones bg-cover bg-center flex flex-col items-center gap-2 h-screen overflow-auto">
+    <div className="bg-container bg-center flex flex-col items-center gap-2 h-screen overflow-auto">
       <button
         className="text-black rounded-lg font-bold absolute left-3 top-3"
         onClick={backHome}

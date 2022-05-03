@@ -46,7 +46,7 @@ function ResultPage() {
   }
 
   return (
-    <div className="bg-yellow-200 h-screen overflow-auto">
+    <div className="bg-gray-200 h-screen overflow-auto">
       { place.tie ? <TieResult /> : (
         <div className="flex justify-center gap-8 md:gap-16">
           <div className="flex flex-col items-center pt-10 gap-5 font-bol">
@@ -55,7 +55,7 @@ function ResultPage() {
               <p className="md:text-5xl font-bold shadow-logo">CLASSIFICAÇÃO</p>
               <img src={trophy} alt="Trófeu dourado" />
             </div>
-            <div className="bg-gradient-to-r from-yellow-200 to-yellow-600 p-2 rounded-md font-bold md:p-3 flex">
+            <div className="bg-gradient-to-r from-yellow-200 to-yellow-600 p-2 rounded-md font-bold md:p-3 flex w-96">
               <img src={gold} alt="gold medal" />
               <div>
                 <p className="md:text-2xl text-center shadow-logo">
@@ -67,7 +67,7 @@ function ResultPage() {
                 </p>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-gray-300 to-gray-600 p-2 rounded-md font-bold  md:p-3 flex">
+            <div className="bg-gradient-to-r from-gray-300 to-gray-600 p-2 rounded-md font-bold  md:p-3 flex  w-96">
               <img src={silver} alt="silver medal" />
               <div>
                 <p className="md:text-2xl text-center shadow-logo">
