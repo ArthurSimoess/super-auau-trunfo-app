@@ -29,9 +29,9 @@ function CreateGameForms() {
     setFormsValue({
       name: '',
       description: '',
-      attack: '',
-      defense: '',
-      velocity: '',
+      mordida: '',
+      fome: '',
+      fofura: '',
       img: '',
       rarity: 'Normal',
       cardTrunfo: false,
@@ -49,7 +49,7 @@ function CreateGameForms() {
 
   return (
     <form onSubmit={handleSubmit} className="w-screen p-10">
-      <div className="flex flex-col items-center gap-10">
+      <div className="flex flex-col items-center gap-4">
         <CreateGameInputs
           type="text"
           name="name"
@@ -58,7 +58,9 @@ function CreateGameForms() {
           label="Nome"
         />
         <label htmlFor="description">
-          Descrição
+          <p className="m-0 font-bold text-xl shadow-black">
+            Descrição
+          </p>
           <textarea
             type="text"
             placeholder="Digite a descrição"
@@ -67,27 +69,27 @@ function CreateGameForms() {
             onChange={handleChangeForms}
             maxLength="100"
             autoComplete="off"
-            className="block border rounded w-full py-1 px-2 text-black resize-none"
+            className="block border rounded w-72 py-1 px-2 text-black resize-none"
           />
         </label>
         <CreateGameInputs
           type="number"
-          name="attack"
-          label="Ataque"
+          name="mordida"
+          label="Mordida"
           max="99"
           min="1"
         />
         <CreateGameInputs
           type="number"
-          name="defense"
-          label="Defesa"
+          name="fome"
+          label="Fome"
           max="99"
           min="1"
         />
         <CreateGameInputs
           type="number"
-          name="velocity"
-          label="Velocidade"
+          name="fofura"
+          label="Fofura"
           max="99"
           min="1"
         />
@@ -98,7 +100,7 @@ function CreateGameForms() {
             label="Imagem"
           />
           <i
-            className="far fa-question-circle text-xl pt-5 cursor-pointer"
+            className="far fa-question-circle text-xl cursor-pointer pt-4 shadow-black font-bold"
             onClick={doubtClick}
           />
         </div>

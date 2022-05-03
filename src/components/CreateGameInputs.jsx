@@ -9,7 +9,9 @@ function CreateGameInputs({
 
   return (
     <label htmlFor={name}>
-      {label}
+      <p className="m-0 font-bold text-xl shadow-black">
+        {label}
+      </p>
       <input
         type={type}
         value={formsValues[name]}
@@ -20,7 +22,7 @@ function CreateGameInputs({
         max={max}
         min={min}
         autoComplete="off"
-        className="block border rounded w-full py-1 px-2 text-black shadow-sd shadow-white"
+        className="block border rounded w-full py-1 px-2 text-black"
       />
     </label>
   );
