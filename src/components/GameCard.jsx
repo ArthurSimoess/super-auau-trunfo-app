@@ -9,7 +9,7 @@ function GameCard({
     <main>
       <section className="flex flex-col items-center h-auto border-solid border-8 border-black bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 shadow-xl w-80 text-white">
         <div className="bg-gradient-to-r from-gray-500 to-gray-900 w-11/12 h-10 mt-3 rounded-t-xl flex justify-center items-center">
-          <p>{ name }</p>
+          <p className="m-0 font-bold">{ name }</p>
         </div>
         <div className="w-11/12 h-44 ronded-xl">
           <img src={img} alt={name} className="h-44 w-full" />

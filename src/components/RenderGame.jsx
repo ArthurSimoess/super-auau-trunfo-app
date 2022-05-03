@@ -134,7 +134,7 @@ function RenderGame({ deck }) {
                   <button
                     type="button"
                     onClick={handleClickBtn}
-                    className="p-2 bg-black text-white to-gray-900 hover:p-3 hover:text-black border-2 border-white rounded-xl font-bold"
+                    className="p-2 bg-black text-white border-2 border-white rounded-xl font-bold"
                   >
                     Nova Rodada
                   </button>
