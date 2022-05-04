@@ -15,7 +15,7 @@ function MyContextProvider({ children }) {
     mordida: '',
     fome: '',
     fofura: '',
-    img: '',
+    img: 'https://uploads.metropoles.com/wp-content/uploads/2020/09/21152932/Design-sem-nome-11_Easy-Resize.com_-600x400.jpg',
     rarity: 'Normal',
     cardTrunfo: false,
   });
