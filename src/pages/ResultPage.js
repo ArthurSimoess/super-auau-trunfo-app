@@ -46,13 +46,13 @@ function ResultPage() {
   }
 
   return (
-    <div className="bg-gray-200 h-screen overflow-auto">
+    <div className="bg-container h-screen overflow-auto">
       { place.tie ? <TieResult /> : (
         <div className="flex justify-center gap-8 md:gap-16">
           <div className="flex flex-col items-center pt-10 gap-5 font-bol">
-            <div className="flex gap-5 items-center">
+            <div className="flex gap-1 md:gap-5 items-center">
               <img src={trophy} alt="Trófeu dourado" />
-              <p className="md:text-5xl font-bold shadow-logo">CLASSIFICAÇÃO</p>
+              <p className="text-xl md:text-6xl text-white font-bold shadow-text">CLASSIFICAÇÃO</p>
               <img src={trophy} alt="Trófeu dourado" />
             </div>
             <div className="bg-gradient-to-r from-yellow-200 to-yellow-600 p-2 rounded-md font-bold md:p-3 flex w-96">

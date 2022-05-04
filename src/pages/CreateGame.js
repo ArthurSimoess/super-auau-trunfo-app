@@ -23,7 +23,7 @@ function CreateGame() {
   return (
     <div className="bg-container h-screen overflow-auto">
       <button
-        className="text-black rounded-lg font-bold absolute left-3 top-2"
+        className="text-black rounded-lg font-bold absolute left-3 top-2 z-10"
         onClick={backHome}
         type="button"
       >

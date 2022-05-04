@@ -7,7 +7,7 @@ function GameCard({
 }) {
   return (
     <main>
-      <section className="flex flex-col items-center h-auto border-solid border-8 border-black bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 shadow-xl w-80 text-white">
+      <section className="flex flex-col items-center h-auto border-solid border-8 border-black bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 shadow-white shadow-md w-80 text-white relative">
         <div className="bg-gradient-to-r from-gray-500 to-gray-900 w-11/12 h-10 mt-3 rounded-t-xl flex justify-center items-center">
           <p className="m-0 font-bold">{ name }</p>
         </div>
@@ -55,7 +55,7 @@ function GameCard({
         { cardTrunfo
               && (
               <div className="rounded-full bg-gradient-to-r from-amber-200 to-yellow-800 border-black border-solid border-4 w-20 h-20 flex items-center absolute mt-36 ml-36">
-                <p className="text-center -rotate-12 text-black font-bold">
+                <p className="text-center -rotate-12 text-black font-bold m-0">
                   Super Trunfo
                 </p>
               </div>
