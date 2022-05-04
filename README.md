@@ -1,6 +1,6 @@
 # Deploy do projeto
 
-[Deploy do projeto](https://arthursimoess.github.io/super-trunfo-project/#/)
+[Deploy do projeto](https://super-auau-trunfo-hp800roe6-arthursimoess.vercel.app/)
 
 # Projeto Super Tryunfo
 
