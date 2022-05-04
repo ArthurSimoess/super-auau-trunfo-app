@@ -55,6 +55,7 @@ function CreateCardsList() {
 
   return (
     <div className="pt-10 pb-10 w-screen bg-yellow-200 overflow-auto">
+      <p className="text-center shadow-logo font-bold">**O seu baralho precisa ter um número par de cartas para ser salvo</p>
       <div className="flex flex-col items-center gap-5 bg-Search-Back bg-cover bg-center w-96 mx-auto p-10 rounded-lg shadow-white shadow-sm">
         <FilterInputs
           name="filterByName"
