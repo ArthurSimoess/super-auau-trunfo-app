@@ -1,7 +1,6 @@
 {
   "name": "super-trunfo-project",
   "version": "0.1.0",
-  "homepage": "https://ArthurSimoess.github.io/super-trunfo-project",
   "private": true,
   "dependencies": {
     "@heroicons/react": "^1.0.5",
